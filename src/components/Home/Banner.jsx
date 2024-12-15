@@ -92,9 +92,9 @@ const Banner = () => {
                             viewport={{ once: true }}
                             className="bg-blue-100 p-4 rounded-full shadow-lg"
                             whileHover={{
-                                scale: 1.2, 
-                                rotate: 180, 
-                                transition: { type: "spring", stiffness: 300 }, 
+                                scale: 1.2,
+                                rotate: 180,
+                                transition: { type: "spring", stiffness: 300 },
                             }}
                         >
                             <Globe size={40} className="text-blue-600" />
@@ -108,8 +108,8 @@ const Banner = () => {
                             className="bg-green-100 p-4 rounded-full shadow-lg"
                             whileHover={{
                                 scale: 1.2,
-                                rotate: 180, 
-                                transition: { type: "spring", stiffness: 300 }, 
+                                rotate: 180,
+                                transition: { type: "spring", stiffness: 300 },
                             }}
                         >
                             <Target size={40} className="text-green-600" />
@@ -122,9 +122,9 @@ const Banner = () => {
                             viewport={{ once: true }}
                             className="bg-purple-100 p-4 rounded-full shadow-lg"
                             whileHover={{
-                                scale: 1.2, 
+                                scale: 1.2,
                                 rotate: 180,
-                                transition: { type: "spring", stiffness: 300 }, 
+                                transition: { type: "spring", stiffness: 300 },
                             }}
                         >
                             <Star size={40} className="text-purple-600" />
@@ -133,7 +133,7 @@ const Banner = () => {
 
                     <Link to='/contact' className="flex justify-center md:justify-start items-center">
                         <motion.button
-                            className=" uppercase mt-8 flex  items-center bg-blue-600 hover:bg-blue-700 transform duration-300 text-white px-4 py-2 rounded"
+                            className=" uppercase mt-8 flex  items-center bg-Blue hover:bg-Blue-hover transform duration-300 text-white px-4 py-2 rounded"
                             whileHover={{ scale: 1.05 }}
                         >
                             <span>Contact Us</span>
