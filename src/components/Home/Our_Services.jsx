@@ -1,8 +1,20 @@
+import  { useEffect } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { FaDatabase, FaHandHoldingUsd, FaGavel, FaUsers, FaBroadcastTower } from "react-icons/fa";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import AOS from "aos";
 
 const Our_Services = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, 
+            once: false, 
+            mirror: true,
+        });
+    }, []);
+    
+
     const services = [
         {
             id: 1,
@@ -36,6 +48,24 @@ const Our_Services = () => {
         },
     ];
 
+    const NextArrow = ({ onClick }) => (
+        <button
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10 bg-[#000872] p-2 rounded-full shadow-lg hover:bg-[#1a1a8c] transition"
+            onClick={onClick}
+        >
+            <IoIosArrowForward size={24} className="text-white" />
+        </button>
+    );
+
+    const PrevArrow = ({ onClick }) => (
+        <button
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 z-10 bg-[#000872] p-2 rounded-full shadow-lg hover:bg-[#1a1a8c] transition"
+            onClick={onClick}
+        >
+            <IoIosArrowBack size={24} className="text-white" />
+        </button>
+    );
+
     const settings = {
         dots: true,
         infinite: true,
@@ -45,23 +75,25 @@ const Our_Services = () => {
         autoplay: true,
         autoplaySpeed: 3000,
         pauseOnHover: true,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
         responsive: [
             {
                 breakpoint: 1024,
-                settings: {
-                    slidesToShow: 5,
-                },
-            },
-            {
-                breakpoint: 768,
                 settings: {
                     slidesToShow: 4,
                 },
             },
             {
-                breakpoint: 480,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
                 },
             },
         ],
@@ -72,15 +104,21 @@ const Our_Services = () => {
     };
 
     return (
-        <div className="bg-slate-50">
-            <div className="max-w-screen-xl px-4 py-12 mx-auto">
-                <h1 className="text-center font-bold font-heebo text-3xl text-[#000872] relative">
+        <div className="bg-slate-50 relative">
+            <div className="max-w-screen-xl px-4 py-16 mx-auto">
+                <h1
+                    className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
+                    data-aos="fade-down"
+                >
                     Our Services
-                    <span className="block mx-auto mt-2 h-1 w-16 bg-[#000872] rounded-full"></span>
+                    <span
+                        className="block mx-auto mt-2 h-1 w-16 bg-[#000872] rounded-full"
+                        data-aos="fade-up"
+                    ></span>
                 </h1>
 
                 {/* Services Slider */}
-                <div className="mt-8">
+                <div className="mt-8 relative" data-aos="fade-up">
                     <Slider {...settings}>
                         {services.map((service) => (
                             <motion.div
@@ -96,8 +134,8 @@ const Our_Services = () => {
                                 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="p-6 mx-4 hover:bg-white hover:border my-10 space-y-4 cursor-pointer rounded-lg"
+                                data-aos="zoom-in"
                             >
-                                {/* Icon with Animation */}
                                 <motion.div
                                     className="text-Blue flex items-center justify-center"
                                     whileHover={{
@@ -107,7 +145,6 @@ const Our_Services = () => {
                                 >
                                     {service.icon}
                                 </motion.div>
-                                {/* Title */}
                                 <h2 className="font-heebo text-xl font-bold text-center text-[#000872]">
                                     {service.title}
                                 </h2>

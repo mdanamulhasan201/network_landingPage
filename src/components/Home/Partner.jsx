@@ -15,7 +15,7 @@ const Partner = () => {
     ];
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 1000,
         slidesToShow: 8,
@@ -54,7 +54,7 @@ const Partner = () => {
 
     return (
         <div className="">
-            <div className="max-w-screen-xl mx-auto px-4 py-12">
+            <div className="max-w-screen-xl mx-auto px-4 py-16">
             <h1 className="text-center font-bold font-heebo text-3xl text-[#000872] relative">
                 Our Partner
                 <span className="block mx-auto mt-2 h-1 w-16 bg-[#000872] rounded-full"></span>
