@@ -13,6 +13,15 @@ export default {
       fontFamily: {
         'heebo': ['Heebo', 'Georgia', 'serif'],
       },
+      animation: {
+        scroll: 'scroll 10s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '0 100%' },
+        },
+      },
     },
   },
   plugins: [],

@@ -156,11 +156,11 @@ const ResponsiveNavbar = () => {
     );
 
     return (
-        <nav className="shadow ">
+        <nav className="border  ">
             <div className="max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-2 ">
-                    <img src={logo} alt="Logo" className="w-40 h-10" />
+                    <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" />
                 </Link>
 
                 {/* Mobile Menu Toggle */}
