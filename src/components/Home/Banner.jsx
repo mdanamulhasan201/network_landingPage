@@ -83,7 +83,7 @@ const Banner = () => {
                         Unlocking unlimited potential with data and technology-driven marketing.
                     </motion.p>
 
-                    <div className="mt-8  flex justify-center md:justify-start space-x-6">
+                    <div className="mt-8 flex justify-center md:justify-start space-x-6">
                         <motion.div
                             custom={0}
                             variants={iconVariants}
@@ -91,6 +91,11 @@ const Banner = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             className="bg-blue-100 p-4 rounded-full shadow-lg"
+                            whileHover={{
+                                scale: 1.2, 
+                                rotate: 180, 
+                                transition: { type: "spring", stiffness: 300 }, 
+                            }}
                         >
                             <Globe size={40} className="text-blue-600" />
                         </motion.div>
@@ -101,6 +106,11 @@ const Banner = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             className="bg-green-100 p-4 rounded-full shadow-lg"
+                            whileHover={{
+                                scale: 1.2,
+                                rotate: 180, 
+                                transition: { type: "spring", stiffness: 300 }, 
+                            }}
                         >
                             <Target size={40} className="text-green-600" />
                         </motion.div>
@@ -111,13 +121,19 @@ const Banner = () => {
                             whileInView="visible"
                             viewport={{ once: true }}
                             className="bg-purple-100 p-4 rounded-full shadow-lg"
+                            whileHover={{
+                                scale: 1.2, 
+                                rotate: 180,
+                                transition: { type: "spring", stiffness: 300 }, 
+                            }}
                         >
                             <Star size={40} className="text-purple-600" />
                         </motion.div>
                     </div>
-                    <Link to='/contact'>
+
+                    <Link to='/contact' className="flex justify-center md:justify-start items-center">
                         <motion.button
-                            className="flex items-center uppercase mt-8 bg-blue-600 hover:bg-blue-700 transform duration-300 text-white px-4 py-2 rounded"
+                            className=" uppercase mt-8 flex  items-center bg-blue-600 hover:bg-blue-700 transform duration-300 text-white px-4 py-2 rounded"
                             whileHover={{ scale: 1.05 }}
                         >
                             <span>Contact Us</span>
