@@ -118,14 +118,14 @@ const Banner = () => {
                     <Link to='/contact'>
                         <motion.button
                             className="flex items-center uppercase mt-8 bg-blue-600 hover:bg-blue-700 transform duration-300 text-white px-4 py-2 rounded"
-                            whileHover={{ scale: 1.05 }} 
+                            whileHover={{ scale: 1.05 }}
                         >
                             <span>Contact Us</span>
 
                             <motion.div
                                 className="ml-1"
                                 initial={{ x: 0 }}
-                                whileHover={{ x: 8 }} 
+                                whileHover={{ x: 8 }}
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
                                 <TiArrowRight className="text-xl" />
