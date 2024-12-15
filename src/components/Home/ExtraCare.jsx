@@ -5,14 +5,14 @@ import AOS from "aos";
 const ExtraCare = () => {
     useEffect(() => {
         AOS.init({
-            duration: 1000,
+            duration: 2000,
             once: false,
             mirror: true,
         });
     }, []);
     return (
         <div className="max-w-screen-xl mx-auto px-4 py-16">
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-10"    >
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
                 {/* Left side */}
                 <div className="w-full lg:w-7/12 mx-auto text-center lg:text-left" data-aos="fade-right">
                     <h1 className="text-2xl xl:text-3xl font-heebo font-bold">
