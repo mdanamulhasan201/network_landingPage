@@ -10,20 +10,31 @@
   scroll-behavior: smooth;
 }
 
-/* Customize Scrollbar */
+/* For Webkit-based browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-  width: 8px; 
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f0f0f0; 
+  background: #f0f0f0;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #0049AC;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0048acd8; 
+  background-color: #0048acd8;
+}
+
+/* For Mozilla Firefox */
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: #0049AC #f0f0f0; 
+}
+
+/* Optional hover effect for Firefox */
+*:hover {
+  scrollbar-color: #0048acd8 #f0f0f0;
 }

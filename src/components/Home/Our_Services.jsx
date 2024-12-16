@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FaDatabase, FaHandHoldingUsd, FaGavel, FaUsers, FaBroadcastTower } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import AOS from "aos";
-
+import "aos/dist/aos.css";
 const Our_Services = () => {
     useEffect(() => {
         AOS.init({

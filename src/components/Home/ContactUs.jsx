@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import AOS from "aos";
-
+import "aos/dist/aos.css";
 const ContactUs = () => {
     useEffect(() => {
         AOS.init({

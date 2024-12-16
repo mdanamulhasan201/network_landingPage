@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import support from "../../assets/support.svg";
 import AOS from "aos";
-
+import "aos/dist/aos.css";
 const ExtraCare = () => {
     useEffect(() => {
         AOS.init({

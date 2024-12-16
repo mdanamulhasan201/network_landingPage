@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import partner1 from "../../assets/partner1.webp";
 import { useEffect } from "react";
 import AOS from "aos";
+import "aos/dist/aos.css";
 const Partner = () => {
     useEffect(() => {
         AOS.init({
