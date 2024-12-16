@@ -93,7 +93,7 @@ const ResponsiveNavbar = () => {
 
     // Helper function to add active class
     const getActiveClass = (path) => {
-        return location.pathname === path ? 'text-Blue font-semibold' : '';
+        return location.pathname === path ? 'text-Blue font-semibold' : 'text-gray-600';
     };
 
     // Dropdown Component
@@ -139,7 +139,7 @@ const ResponsiveNavbar = () => {
                                 to={item.path}
                                 className={`
                                     block ${isMobile
-                                        ? 'py-2 text-gray-600 hover:text-gray-500 transform duration-300'
+                                        ? 'py-2 text-Blue hover:text-gray-500 transform duration-300'
                                         : 'px-4 py-2 hover:bg-gray-100 hover:text-Blue transform duration-300'} 
                                     ${getActiveClass(item.path)}
                                 `}

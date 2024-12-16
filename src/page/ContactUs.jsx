@@ -8,9 +8,10 @@ import { toast } from 'react-toastify';
 import { TiArrowRight } from 'react-icons/ti';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from 'react-helmet-async';
 
 const ContactUs = () => {
-   
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -50,12 +51,15 @@ const ContactUs = () => {
                 position: "top-right",
                 autoClose: 3000,
             });
-            reset(); 
+            reset();
         }, 2000);
     };
 
     return (
         <div className='max-w-screen-xl mx-auto px-4 py-16 flex flex-col lg:flex-row gap-10'>
+            <Helmet>
+                <title>Cash Media | Contact Us</title>
+            </Helmet>
             {/* Left Side - Contact Info */}
             <div className='flex flex-col gap-5 justify-center lg:w-1/2' data-aos="fade-right">
                 <h3 className='font-heebo font-semibold uppercase text-Blue'>Contact us</h3>

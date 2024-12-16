@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 
 const ServiceDetails = () => {
@@ -14,11 +15,22 @@ const ServiceDetails = () => {
     const service = services.find((service) => service.slug === slug);
 
     if (!service) {
-        return <div>Service not found</div>;
+        return (
+            <div>
+                <Helmet>
+                    <title>Cash Media | Service Not Found</title>
+                </Helmet>
+                <h1>Service not found</h1>
+            </div>
+        );
     }
 
     return (
         <div className="p-4 max-w-screen-md mx-auto">
+            <Helmet>
+                <title>Cash Media | {service.title}</title>
+                <meta name="description" content={service.description} />
+            </Helmet>
             <h1 className="text-2xl font-bold mb-4">{service.title}</h1>
             <img src={service.image || 'https://via.placeholder.com/400'} alt={service.title} className="mb-4 rounded" />
             <p>{service.description}</p>

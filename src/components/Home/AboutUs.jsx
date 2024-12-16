@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 const AboutUs = () => {
-   
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -20,6 +21,8 @@ const AboutUs = () => {
 
     return (
         <div className="max-w-screen-xl mx-auto px-4 py-16">
+
+           
             {/* Title Section */}
             <h1
                 className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
