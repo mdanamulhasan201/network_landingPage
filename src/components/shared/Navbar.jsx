@@ -21,11 +21,13 @@ const ResponsiveNavbar = () => {
     // Shared dropdown items
     const servicesDropdownItems = [
         { label: 'Data Management', path: '/services/data-management' },
-        { label: 'Affiliate Services', path: '/services/affiliate' },
+        { label: 'Affiliate Services', path: '/services/affiliate-services' },
         { label: 'Legal Marketing', path: '/services/legal-marketing' },
         { label: 'Lead Generation', path: '/services/lead-generation' },
-        { label: 'Media Buying', path: '/services/media-buying' }
+        { label: 'Media Buying', path: '/services/media-buying' },
     ];
+    
+    
 
     const aboutDropdownItems = [
         { label: 'About Us', path: '/about' },
