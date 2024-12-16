@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 const Partner = () => {
     useEffect(() => {
         AOS.init({
-            duration: 15000,
+            duration: 4000,
             once: false,
             mirror: true,
         });

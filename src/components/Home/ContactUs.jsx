@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 const ContactUs = () => {
     useEffect(() => {
         AOS.init({
-            duration: 10000,
+            duration: 3000,
             once: false,
             mirror: true,
         });

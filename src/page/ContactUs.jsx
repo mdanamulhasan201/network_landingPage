@@ -3,10 +3,20 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { MdEmail } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { TiArrowRight } from 'react-icons/ti';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ContactUs = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, 
+            once: false, 
+            mirror: true,
+        });
+    }, []);
     const socialLinks = [
         { id: 1, icon: <FaFacebookF />, url: "https://www.facebook.com" },
         { id: 2, icon: <FaTwitter />, url: "https://www.twitter.com" },
@@ -33,14 +43,14 @@ const ContactUs = () => {
                 position: "top-right",
                 autoClose: 3000,
             });
-            reset(); // Clear the form fields
+            reset(); 
         }, 2000);
     };
 
     return (
         <div className='max-w-screen-xl mx-auto px-4 py-16 flex flex-col lg:flex-row gap-10'>
             {/* Left Side - Contact Info */}
-            <div className='flex flex-col gap-5 justify-center lg:w-1/2'>
+            <div className='flex flex-col gap-5 justify-center lg:w-1/2' data-aos="fade-right">
                 <h3 className='font-heebo font-semibold uppercase text-Blue'>Contact us</h3>
                 <h1 className='font-heebo font-bold text-lg xl:text-5xl'>Get In Touch</h1>
 
@@ -67,7 +77,7 @@ const ContactUs = () => {
                     {/* Address and Social Icons */}
                     <div className='flex flex-col gap-2 mt-5 md:mt-0'>
                         <h2 className='uppercase font-semibold font-heebo'>Mailing Address</h2>
-                        <div className='flex items-center'>
+                        <div className='flex items-start md:items-center'>
                             <FaLocationDot className='text-Blue text-xl' />
                             <p className='text-md font-heebo'>1234 Street Name, City Name, Dhaka, Bangladesh</p>
                         </div>
@@ -94,7 +104,7 @@ const ContactUs = () => {
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className='lg:w-1/2 bg-gray-100 p-8 rounded-lg shadow-md'>
+            <div className='lg:w-1/2 bg-gray-100 p-8 rounded-lg shadow-md' data-aos="fade-left">
                 <h2 className='font-heebo font-semibold uppercase text-Blue mb-6 text-lg'>Send Us a Message</h2>
                 <form className='flex flex-col gap-4' onSubmit={handleSubmit(onSubmit)}>
                     {/* Full Name */}
@@ -176,7 +186,7 @@ const ContactUs = () => {
                     {/* Submit Button */}
                     <button
                         type='submit'
-                        className='bg-Blue text-white font-semibold p-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center'
+                        className='bg-Blue hover:bg-Blue-hover text-white font-semibold p-3 rounded-lg transition duration-300 flex items-center justify-center'
                         disabled={isLoading}
                     >
                         {isLoading ? (
@@ -184,6 +194,8 @@ const ContactUs = () => {
                         ) : (
                             "Submit"
                         )}
+
+                        <TiArrowRight className="text-xl" />
                     </button>
                 </form>
             </div>

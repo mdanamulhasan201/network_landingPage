@@ -213,13 +213,13 @@ const ResponsiveNavbar = () => {
                                     />
 
                                     {/* Additional Mobile Links */}
-                                    <Link
+                                    {/* <Link
                                         to="/join"
                                         className={`block py-2 hover:text-gray-500 transform duration-300 ${getActiveClass('/join')}`}
                                         onClick={toggleMobileMenu}
                                     >
                                         Join Us
-                                    </Link>
+                                    </Link> */}
                                     <Link
                                         to="/contact"
                                         className={`block py-2 hover:text-gray-500 transform duration-300 ${getActiveClass('/contact')}`}
@@ -255,7 +255,7 @@ const ResponsiveNavbar = () => {
                     />
 
                     {/* Additional Links */}
-                    <Link to="/join" className={`hover:text-gray-500 transform duration-300 ${getActiveClass('/join')}`}>Join Us</Link>
+                    {/* <Link to="/join" className={`hover:text-gray-500 transform duration-300 ${getActiveClass('/join')}`}>Join Us</Link> */}
                     <Link to="/contact" className={`hover:text-gray-500 transform duration-300 ${getActiveClass('/contact')}`}>Contact</Link>
                     <Link
                         to="/login"
