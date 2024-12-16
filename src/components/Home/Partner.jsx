@@ -5,13 +5,20 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const Partner = () => {
+   
     useEffect(() => {
         AOS.init({
-            duration: 4000,
+            duration: 1000,
             once: false,
             mirror: true,
+            offset: 120,
+            debug: true,
         });
+        return () => {
+            AOS.refresh();
+        };
     }, []);
+
     const partners = [
         { id: 1, image: partner1, alt: "partner1" },
         { id: 2, image: partner1, alt: "partner2" },

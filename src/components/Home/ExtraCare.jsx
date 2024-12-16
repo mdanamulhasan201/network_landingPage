@@ -3,13 +3,20 @@ import support from "../../assets/support.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const ExtraCare = () => {
+   
     useEffect(() => {
         AOS.init({
-            duration: 2000,
+            duration: 1000,
             once: false,
             mirror: true,
+            offset: 120,
+            debug: true,
         });
+        return () => {
+            AOS.refresh();
+        };
     }, []);
+
     return (
         <div className="max-w-screen-xl mx-auto px-4 py-16">
             <div className="flex flex-col lg:flex-row justify-between items-center gap-10">

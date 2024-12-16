@@ -1,19 +1,30 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { FaDatabase, FaHandHoldingUsd, FaGavel, FaUsers, FaBroadcastTower } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
+
+
 const Our_Services = () => {
+    const navigate = useNavigate();
+
     useEffect(() => {
         AOS.init({
-            duration: 1000, 
-            once: false, 
+            duration: 1000,
+            once: false,
             mirror: true,
+            offset: 120,
+            debug: true,
         });
+        return () => {
+            AOS.refresh();
+        };
     }, []);
-    
+
+
 
     const services = [
         {
@@ -21,29 +32,34 @@ const Our_Services = () => {
             icon: <FaDatabase size={96} />,
             title: "Data Management",
             alt: "Data Management",
+            slug: "data-management",
         },
         {
             id: 2,
             icon: <FaHandHoldingUsd size={96} />,
             title: "Affiliate Services",
             alt: "Affiliate Services",
+            slug: "affiliate-services",
         },
         {
             id: 3,
             icon: <FaGavel size={96} />,
             title: "Legal Marketing",
+            slug: "legal-marketing",
             alt: "Legal Marketing",
         },
         {
             id: 4,
             icon: <FaUsers size={96} />,
             title: "Lead Generation",
+            slug: "lead-generation",
             alt: "Lead Generation",
         },
         {
             id: 5,
             icon: <FaBroadcastTower size={96} />,
             title: "Media Buying",
+            slug: "media-buying",
             alt: "Media Buying",
         },
     ];
@@ -99,8 +115,8 @@ const Our_Services = () => {
         ],
     };
 
-    const handleCardClick = (id) => {
-        console.log(`Card with id ${id} is clicked`);
+    const handleCardClick = (slug) => {
+        navigate(`/services/${slug}`);
     };
 
     return (
@@ -123,7 +139,7 @@ const Our_Services = () => {
                         {services.map((service) => (
                             <motion.div
                                 key={service.id}
-                                onClick={() => handleCardClick(service.id)}
+                                onClick={() => handleCardClick(service.slug)}
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 50 }}

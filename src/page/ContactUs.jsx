@@ -10,13 +10,20 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const ContactUs = () => {
+   
     useEffect(() => {
         AOS.init({
-            duration: 1000, 
-            once: false, 
+            duration: 1000,
+            once: false,
             mirror: true,
+            offset: 120,
+            debug: true,
         });
+        return () => {
+            AOS.refresh();
+        };
     }, []);
+
     const socialLinks = [
         { id: 1, icon: <FaFacebookF />, url: "https://www.facebook.com" },
         { id: 2, icon: <FaTwitter />, url: "https://www.twitter.com" },

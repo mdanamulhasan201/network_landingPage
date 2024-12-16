@@ -1,17 +1,26 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 const AboutUs = () => {
+   
     useEffect(() => {
         AOS.init({
             duration: 1000,
             once: false,
             mirror: true,
+            offset: 120,
+            debug: true,
         });
+        return () => {
+            AOS.refresh();
+        };
     }, []);
+
 
     return (
         <div className="max-w-screen-xl mx-auto px-4 py-16">
+            {/* Title Section */}
             <h1
                 className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
                 data-aos="fade-down"
@@ -22,17 +31,13 @@ const AboutUs = () => {
                     data-aos="fade-up"
                 ></span>
             </h1>
+
+            {/* Content Section */}
             <div className="mt-8" data-aos="fade-up">
-                <h1
-                    className="text-2xl xl:text-3xl font-heebo font-bold"
-                 
-                >
+                <h1 className="text-2xl xl:text-3xl font-heebo font-bold">
                     Dedicated to Delivering Value
                 </h1>
-                <p
-                    className="font-heebo text-lg mt-5"
-                
-                >
+                <p className="font-heebo text-lg mt-5">
                     <span className="font-semibold">Cash Media</span> is a premier growth partner,
                     offering a strategic approach to performance marketing. As a dynamic and
                     results-oriented agency, we prioritize delivering tangible, data-driven

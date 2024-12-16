@@ -5,13 +5,20 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const ContactUs = () => {
+ 
     useEffect(() => {
         AOS.init({
-            duration: 3000,
+            duration: 1000,
             once: false,
             mirror: true,
+            offset: 120,
+            debug: true,
         });
+        return () => {
+            AOS.refresh();
+        };
     }, []);
+
     return (
         <div className="bg-Blue ">
             <div className="max-w-screen-xl mx-auto px-4 py-16" data-aos="fade-up">
