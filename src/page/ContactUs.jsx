@@ -63,7 +63,7 @@ const ContactUs = () => {
             <div className=" flex items-center justify-center bg-slate-200 px-5 py-[142px]">
                 <div className="max-w-screen-xl w-full flex flex-col lg:flex-row gap-10 ">
                     {/* Left Side - Contact Info */}
-                    <div className="flex flex-col gap-5 justify-center w-full lg:w-1/2" data-aos="fade-up">
+                    <div className="flex flex-col gap-5 justify-center w-full lg:w-1/2" data-aos="zoom-in">
                         <h3 className="font-heebo font-semibold uppercase text-Blue">Contact us</h3>
                         <h1 className="font-heebo font-bold text-lg xl:text-5xl">Get In Touch</h1>
 
@@ -117,7 +117,7 @@ const ContactUs = () => {
                     </div>
 
                     {/* Right Side - Contact Form */}
-                    <div className="lg:w-1/2 w-full bg-gray-100 p-8 rounded-lg shadow-md" data-aos="fade-up">
+                    <div className="lg:w-1/2 w-full bg-gray-100 p-8 rounded-lg shadow-md" data-aos="zoom-in">
                         <h2 className="font-heebo font-semibold uppercase text-Blue mb-6 text-lg">Send Us a Message</h2>
                         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
                             {/* Full Name */}
