@@ -1,24 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AiOutlinePlus, AiOutlineMinus, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { CgMenuRight } from 'react-icons/cg';
+import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import logo from '../../assets/logoo.png';
 
 const ResponsiveNavbar = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const location = useLocation();
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+    // Toggle the sidebar
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
         setActiveDropdown(null);
     };
 
-    const toggleDropdown = (dropdownName) => {
-        setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
-    };
+    // Handle scroll event for navbar transparency
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
-    // Shared dropdown items
+    // Dropdown Items
     const servicesDropdownItems = [
         { label: 'Data Management', path: '/services/data-management' },
         { label: 'Affiliate Services', path: '/services/affiliate-services' },
@@ -26,8 +36,6 @@ const ResponsiveNavbar = () => {
         { label: 'Lead Generation', path: '/services/lead-generation' },
         { label: 'Media Buying', path: '/services/media-buying' },
     ];
-    
-    
 
     const aboutDropdownItems = [
         { label: 'About Us', path: '/about' },
@@ -35,118 +43,48 @@ const ResponsiveNavbar = () => {
         { label: 'Careers', path: '/careers' }
     ];
 
-    // Dropdown Animations
-    const dropdownVariants = {
-        closed: {
-            opacity: 0,
-            height: 0,
-            transition: {
-                duration: 0.3
-            }
-        },
-        open: {
-            opacity: 1,
-            height: 'auto',
-            transition: {
-                duration: 0.3
-            }
-        }
-    };
-
-    const desktopDropdownVariants = {
-        closed: {
-            opacity: 0,
-            y: -10,
-            visibility: 'hidden'
-        },
-        open: {
-            opacity: 1,
-            y: 0,
-            visibility: 'visible',
-            transition: {
-                duration: 0.3
-            }
-        }
-    };
-
+    // Sidebar Animation
     const sidebarVariants = {
-        closed: {
-            x: '-100%',
-            transition: {
-                type: 'tween',
-                duration: 0.3
-            }
-        },
-        open: {
-            x: 0,
-            transition: {
-                type: 'tween',
-                duration: 0.3
-            }
-        }
+        closed: { x: '-100%', transition: { type: 'tween', duration: 0.3 } },
+        open: { x: 0, transition: { type: 'tween', duration: 0.3 } }
     };
 
-    const iconVariants = {
-        closed: { rotate: 0 },
-        open: { rotate: 180 },
+    // Dropdown Animation
+    const dropdownVariants = {
+        closed: { height: 0, opacity: 0, transition: { duration: 0.3 } },
+        open: { height: 'auto', opacity: 1, transition: { duration: 0.3 } },
     };
 
-    // Helper function to add active class
     const getActiveClass = (path) => {
         return location.pathname === path ? 'text-Blue font-bold' : 'font-bold';
     };
 
     // Dropdown Component
-    const Dropdown = ({
-        items,
-        dropdownName,
-        isMobile = false,
-        className = ''
-    }) => (
-        <div className={`relative text-black font-heebo group ${className}`}>
+    const Dropdown = ({ items, dropdownName }) => (
+        <div className="relative text-black font-heebo group">
             <button
-                onClick={() => toggleDropdown(dropdownName)}
-                className={`
-                    flex items-center space-x-2  text-black
-                    ${isMobile ? 'w-full justify-between' : 'hover:text-gray-500 transform duration-300'}
-                `}
+                onClick={() => setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName)}
+                className="flex items-center space-x-2 text-black hover:text-gray-500 transition duration-300 w-full"
             >
                 <span>{dropdownName.charAt(0).toUpperCase() + dropdownName.slice(1)}</span>
-                <motion.div
-                    variants={iconVariants}
-                    initial="closed"
-                    animate={activeDropdown === dropdownName ? 'open' : 'closed'}
-                >
-                    {activeDropdown === dropdownName ? <AiOutlineMinus /> : <AiOutlinePlus />}
-                </motion.div>
+                {activeDropdown === dropdownName ? <AiOutlineMinus /> : <AiOutlinePlus />}
             </button>
 
             <AnimatePresence>
                 {activeDropdown === dropdownName && (
                     <motion.div
-                        variants={isMobile ? dropdownVariants : desktopDropdownVariants}
+                        variants={dropdownVariants}
                         initial="closed"
                         animate="open"
                         exit="closed"
-                        className={`
-                            ${isMobile
-                                ? 'pl-4 mt-2'
-                                : 'absolute z-50 top-full left-0 mt-2 bg-white border text-gray-800 rounded shadow-lg w-48 py-2'}`}
+                        className="pl-4 mt-2"
                     >
                         {items.map((item, index) => (
                             <Link
                                 key={index}
                                 to={item.path}
-                                className={`
-                                    block ${isMobile
-                                        ? 'py-2 text-Blue hover:text-gray-500 transform duration-300'
-                                        : 'px-4 py-2 hover:bg-gray-100 hover:text-Blue transform duration-300'} 
-                                    ${getActiveClass(item.path)}
-                                `}
-                                onClick={() => {
-                                    if (isMobile) setIsMobileMenuOpen(false);
-                                    setActiveDropdown(null);
-                                }}
+                                className={`block py-2 hover:text-gray-500 transition duration-300 ${getActiveClass(item.path)}`}
+                                onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.label}
                             </Link>
@@ -158,81 +96,66 @@ const ResponsiveNavbar = () => {
     );
 
     return (
-        <nav className="border">
-            <div className="max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between">
+        <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? '' : 'bg-transparent'}`}>
+            <div className="px-10 2xl:px-20 py-6 flex items-center justify-between">
                 {/* Logo */}
-                <Link to="/" className="flex items-center space-x-2 ">
+                <Link to="/" className="flex items-center space-x-2">
                     <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" />
                 </Link>
 
-                {/* Mobile Menu Toggle */}
-                <div className="md:hidden">
-                    <button onClick={toggleMobileMenu} className="z-50">
-                        {isMobileMenuOpen ? <AiOutlineClose className="text-2xl" /> : <AiOutlineMenu className="text-2xl" />}
-                    </button>
-                </div>
+                <button onClick={toggleMenu} className="z-50 text-white text-3xl">
+                    {isMenuOpen ? (
+                        <AiOutlineClose className={`${isScrolled ? 'text-white' : 'text-white'} text-4xl`} />
+                    ) : (
+                        <CgMenuRight className={`${isScrolled ? 'text-Blue' : 'text-white'} text-4xl`} />
+                    )}
+                </button>
 
-                {/* Mobile Sidebar */}
+
+                {/* Sidebar */}
                 <AnimatePresence>
-                    {isMobileMenuOpen && (
+                    {isMenuOpen && (
                         <>
-                            {/* Mobile Overlay */}
+                            {/* Overlay */}
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 0.5 }}
                                 exit={{ opacity: 0 }}
-                                className="fixed inset-0 bg-black z-40 md:hidden"
-                                onClick={toggleMobileMenu}
+                                className="fixed inset-0 bg-black z-40"
+                                onClick={toggleMenu}
                             />
 
-                            {/* Mobile Sidebar */}
+                            {/* Sidebar Content */}
                             <motion.div
                                 variants={sidebarVariants}
                                 initial="closed"
                                 animate="open"
                                 exit="closed"
-                                className="fixed top-0 left-0 w-64 h-full bg-white text-gray-800 z-50 overflow-y-auto p-6 md:hidden font-heebo"
+                                className="fixed top-0 left-0 w-64 h-full bg-white text-gray-800 z-50 p-6 overflow-y-auto"
                             >
                                 <div className="space-y-4">
-                                    {/* Add the Home link here */}
                                     <Link
                                         to="/"
-                                        className={`block py-2 hover:text-gray-500 transform duration-300 ${getActiveClass('/')}`}
-                                        onClick={toggleMobileMenu}
+                                        className={`block py-2 ${getActiveClass('/')}`}
+                                        onClick={toggleMenu}
                                     >
                                         Home
                                     </Link>
 
-                                    <Dropdown
-                                        items={servicesDropdownItems}
-                                        dropdownName="services"
-                                        isMobile={true}
-                                    />
-                                    <Dropdown
-                                        items={aboutDropdownItems}
-                                        dropdownName="about"
-                                        isMobile={true}
-                                    />
+                                    <Dropdown items={servicesDropdownItems} dropdownName="services" />
+                                    <Dropdown items={aboutDropdownItems} dropdownName="about" />
 
-                                    {/* Additional Mobile Links */}
-                                    {/* <Link
-                                        to="/join"
-                                        className={`block py-2 hover:text-gray-500 transform duration-300 ${getActiveClass('/join')}`}
-                                        onClick={toggleMobileMenu}
-                                    >
-                                        Join Us
-                                    </Link> */}
                                     <Link
                                         to="/contact"
-                                        className={`block py-2 hover:text-gray-500 transform duration-300 ${getActiveClass('/contact')}`}
-                                        onClick={toggleMobileMenu}
+                                        className={`block py-2 hover:text-gray-500 ${getActiveClass('/contact')}`}
+                                        onClick={toggleMenu}
                                     >
                                         Contact
                                     </Link>
                                     <Link
                                         to="/login"
-                                        className={`block bg-Blue hover:bg-Blue-hover transform duration-300 text-white px-4 py-2 rounded  ${getActiveClass('/login')}`}
-                                        onClick={toggleMobileMenu}
+                                        className="block bg-Blue text-white px-4 py-2 rounded hover:bg-Blue-hover transition duration-300"
+                                        onClick={toggleMenu}
                                     >
                                         Login
                                     </Link>
@@ -241,31 +164,6 @@ const ResponsiveNavbar = () => {
                         </>
                     )}
                 </AnimatePresence>
-
-                {/* Desktop and Tablet Navigation */}
-                <div className="hidden md:flex items-center space-x-6 w-full justify-end font-heebo">
-                    <Link to="/" className={`hover:text-gray-500 transform duration-300 ${getActiveClass('/')}`}>Home</Link>
-                    <Dropdown
-                        items={servicesDropdownItems}
-                        dropdownName="services"
-                        className=" font-bold"
-                    />
-                    <Dropdown
-                        items={aboutDropdownItems}
-                        dropdownName="about"
-                        className=" font-bold"
-                    />
-
-                    {/* Additional Links */}
-                    {/* <Link to="/join" className={`hover:text-gray-500 transform duration-300 ${getActiveClass('/join')}`}>Join Us</Link> */}
-                    <Link to="/contact" className={`hover:text-gray-500 transform duration-300 ${getActiveClass('/contact')}`}>Contact</Link>
-                    <Link
-                        to="/login"
-                        className={`px-5 py-1 text-white rounded-full bg-Blue hover:bg-Blue-hover transform duration-300 ${getActiveClass('/login')}`}
-                    >
-                        Login
-                    </Link>
-                </div>
             </div>
         </nav>
     );

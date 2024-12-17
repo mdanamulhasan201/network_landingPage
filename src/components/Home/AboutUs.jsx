@@ -22,7 +22,7 @@ const AboutUs = () => {
     return (
         <div className="max-w-screen-xl mx-auto px-4 py-16 ">
 
-           
+
             {/* Title Section */}
             <h1
                 className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
@@ -41,11 +41,8 @@ const AboutUs = () => {
                     Dedicated to Delivering Value
                 </h1>
                 <p className="font-heebo text-lg mt-5">
-                    <span className="font-semibold">Cash Media</span> is a premier growth partner,
-                    offering a strategic approach to performance marketing. As a dynamic and
-                    results-oriented agency, we prioritize delivering tangible, data-driven
-                    outcomes. Our team is composed of seasoned professionals with a business-focused
-                    mindset, dedicated to driving your success with precision and expertise.
+                    <span className="font-semibold">M Cash Media</span>  stands as a leading growth partner, taking a strategic approach to performance marketing. As a results-driven and dynamic agency, we focus on delivering measurable, data-backed results. Our team of experienced professionals brings a business-oriented perspective, committed to driving your success with accuracy and expertise.
+                    To run a successful performance marketing campaign, delivering the right message through the right channels is key. Whether you aim to acquire new customers, generate leads, or drive meaningful customer actions, we provide the tools, expertise, and talent to achieve your goals.
                 </p>
             </div>
         </div>

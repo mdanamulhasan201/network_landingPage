@@ -1,11 +1,12 @@
 
 import { Helmet } from 'react-helmet-async';
 import AboutUs from '../components/Home/AboutUs';
-import Banner from '../components/Home/Banner';
+// import Banner from '../components/Home/Banner';
 import ContactUs from '../components/Home/ContactUs';
 import ExtraCare from '../components/Home/ExtraCare';
 import Our_Services from '../components/Home/Our_Services';
 import Partner from '../components/Home/Partner';
+import Hero from '../components/Home/Hero';
 
 const Home = () => {
     return (
@@ -13,7 +14,8 @@ const Home = () => {
             <Helmet>
                 <title>Cash Media | Home</title>
             </Helmet>
-            <Banner />
+            {/* <Banner /> */}
+            <Hero/>
             <AboutUs />
             <Our_Services />
             <ExtraCare />
