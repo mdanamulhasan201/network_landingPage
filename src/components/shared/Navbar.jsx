@@ -88,14 +88,14 @@ const ResponsiveNavbar = () => {
             x: '100%',
             transition: {
                 type: 'tween',
-                duration: 0.3
+                duration: 0.5
             }
         },
         open: {
             x: 0,
             transition: {
                 type: 'tween',
-                duration: 0.3
+                duration: 0.5
             }
         }
     };
@@ -109,8 +109,8 @@ const ResponsiveNavbar = () => {
     const containerVariants = {
         open: {
             transition: {
-                staggerChildren: 0.2, // Delay each child by 0.2 seconds
-                delayChildren: 0.2, // Delay the appearance of children to make sure the sidebar is opened first
+                staggerChildren: 0.3, 
+                delayChildren: 0.3, 
             },
         },
         closed: {},
@@ -192,8 +192,8 @@ const ResponsiveNavbar = () => {
     );
 
     return (
-        <nav className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-50' : 'bg-transparent'}`}>
-            <div className="px-10 2xl:px-20 py-5 flex items-center justify-between">
+        <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-50' : 'bg-transparent'}`}>
+            <div className="px-5 md:px-5 2xl:px-20 py-5 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-2">
                     <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" />
@@ -270,9 +270,9 @@ const ResponsiveNavbar = () => {
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="z-50 text-white text-3xl">
                         {isMenuOpen ? (
-                            <AiOutlineClose className="text-white text-4xl " />
+                            <></>
                         ) : (
-                            <CgMenuRight className="text-white text-4xl" />
+                            <CgMenuRight className={` text-4xl ${isScrolled ? 'text-Blue' : 'bg-transparent'}`} />
                         )}
                     </button>
                 </div>
