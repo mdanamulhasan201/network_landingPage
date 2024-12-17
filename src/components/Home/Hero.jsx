@@ -56,10 +56,10 @@ const Hero = () => {
                     <img src={toptransparentCircle} alt="" className="w-full h-full" />
                 </div>
 
-                <div className="absolute z-50 right-[580px] top-36  xl:right-[640px] 2xl:right-[850px] 2xl:top-36 hidden lg:block">
+                <div className="absolute z-20 right-[580px] top-36  xl:right-[640px] 2xl:right-[850px] 2xl:top-36 hidden lg:block">
                     <img src={dollarTop} alt="" className="w-full h-full" />
                 </div>
-                <div className="absolute z-50 right-28 bottom-32 xl:right-36 xl:bottom-30 2xl:right-44 2xl:bottom-40 hidden lg:block">
+                <div className="absolute z-20 right-28 bottom-32 xl:right-36 xl:bottom-30 2xl:right-44 2xl:bottom-40 hidden lg:block">
                     <img src={dollarBottom} alt="" className="w-full h-full" />
                 </div>
 
@@ -77,7 +77,7 @@ const Hero = () => {
 
 
             {/* Centered Content */}
-            <div className="relative py-20 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-10 z-10 px-4 sm:px-10 xl:px-4 max-w-screen-xl mx-auto">
+            <div className="relative py-20 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-10 z-10 px-5 sm:px-10 xl:px-5 max-w-screen-xl mx-auto">
                 {/* Left side */}
                 <div className="text-center md:text-left md:w-full">
                     {/* Animated Headline */}
