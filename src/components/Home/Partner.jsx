@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const Partner = () => {
-   
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -43,7 +43,7 @@ const Partner = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 6,
+                    slidesToShow: 5,
                 },
             },
             {
@@ -69,40 +69,40 @@ const Partner = () => {
     };
 
     return (
-        <div className="">
-            <div className="max-w-screen-xl mx-auto px-4 py-16">
-                <h1
-                    className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
-                    data-aos="fade-down"
-                >
-                    Our Partners
-                    <span
-                        className="block mx-auto mt-2 h-1 w-16 bg-[#000872] rounded-full"
-                        data-aos="fade-up"
-                    ></span>
-                </h1>
-                <div className="mt-8" data-aos="fade-up">
-                    <Slider {...settings}>
-                        {partners.map((partner) => (
-                            <motion.div
-                                key={partner.id}
-                                variants={fadeVariants}
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                                className="p-4"
-                            >
-                                <img
-                                    src={partner.image}
-                                    alt={partner.alt}
-                                    className="mx-auto h-20 w-20 object-contain"
-                                />
-                            </motion.div>
-                        ))}
-                    </Slider>
-                </div>
+
+        <div className="max-w-screen-xl mx-auto px-8 py-16 ">
+            <h1
+                className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
+                data-aos="fade-down"
+            >
+                Our Partners
+                <span
+                    className="block mx-auto mt-2 h-1 w-16 bg-[#000872] rounded-full"
+                    data-aos="fade-up"
+                ></span>
+            </h1>
+            <div className="mt-8" data-aos="fade-up">
+                <Slider {...settings}>
+                    {partners.map((partner) => (
+                        <motion.div
+                            key={partner.id}
+                            variants={fadeVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            className="p-4"
+                        >
+                            <img
+                                src={partner.image}
+                                alt={partner.alt}
+                                className="mx-auto h-20 w-20 object-contain"
+                            />
+                        </motion.div>
+                    ))}
+                </Slider>
             </div>
         </div>
+
     );
 };
 

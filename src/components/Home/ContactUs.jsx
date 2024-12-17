@@ -20,7 +20,7 @@ const ContactUs = () => {
     }, []);
 
     return (
-        <div className="bg-Blue ">
+        <div className="bg-Blue">
             <div className="max-w-screen-xl mx-auto px-4 py-16" data-aos="fade-up">
                 <h1 className="text-2xl xl:text-4xl font-heebo font-bold text-white text-center">
                     Ready To Talk? Get In Touch!

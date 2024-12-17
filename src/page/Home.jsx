@@ -9,7 +9,7 @@ import Partner from '../components/Home/Partner';
 
 const Home = () => {
     return (
-        <div>
+        <>
             <Helmet>
                 <title>Cash Media | Home</title>
             </Helmet>
@@ -19,8 +19,8 @@ const Home = () => {
             <ExtraCare />
             <ContactUs />
             <Partner />
-        </div>
-    );
+        </>
+    )
 };
 
 export default Home;

@@ -3,10 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
   scroll-behavior: smooth;
 }
 
@@ -20,7 +22,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #0049AC;
+  background-color: #0049ac;
   border-radius: 10px;
 }
 
@@ -30,8 +32,8 @@
 
 /* For Mozilla Firefox */
 * {
-  scrollbar-width: thin; 
-  scrollbar-color: #0049AC #f0f0f0; 
+  scrollbar-width: thin;
+  scrollbar-color: #0049ac #f0f0f0;
 }
 
 /* Optional hover effect for Firefox */

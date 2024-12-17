@@ -26,15 +26,20 @@ const ServiceDetails = () => {
     }
 
     return (
-        <div className="p-4 max-w-screen-md mx-auto">
+        <>
             <Helmet>
                 <title>Cash Media | {service.title}</title>
                 <meta name="description" content={service.description} />
             </Helmet>
-            <h1 className="text-2xl font-bold mb-4">{service.title}</h1>
-            <img src={service.image || 'https://via.placeholder.com/400'} alt={service.title} className="mb-4 rounded" />
-            <p>{service.description}</p>
-        </div>
+
+            <div className="p-4 max-w-screen-md mx-auto">
+
+                <h1 className="text-2xl font-bold mb-4">{service.title}</h1>
+                <img src={service.image || 'https://via.placeholder.com/400'} alt={service.title} className="mb-4 rounded" />
+                <p>{service.description}</p>
+            </div>
+        </>
+
     );
 };
 

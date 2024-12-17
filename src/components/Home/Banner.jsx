@@ -153,13 +153,13 @@ const Banner = () => {
 
                 {/* Right side with image */}
                 <motion.div
-                    className="flex justify-end items-center w-full md:w-full"
+                    className="flex justify-center md:justify-end items-center w-full md:w-full"
                     variants={imageVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <img src={img} alt="Banner Image" className="w-full max-w-full h-auto" />
+                    <img src={img} alt="Banner Image" className="w-[500px]  md:w-full h-auto" />
                 </motion.div>
             </div>
         </motion.div>

@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')).render(
     <StrictMode>
       <RouterProvider router={router} />
       <ToastContainer />
-    </StrictMode>,
+    </StrictMode>
   </HelmetProvider>
 
 )

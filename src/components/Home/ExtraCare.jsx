@@ -18,10 +18,10 @@ const ExtraCare = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-xl mx-auto px-4 py-16">
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
+        <div className="max-w-screen-xl mx-auto px-4 py-16 ">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-10">
                 {/* Left side */}
-                <div className="w-full lg:w-7/12 mx-auto text-center lg:text-left" data-aos="fade-right">
+                <div className="w-full md:w-6/12 mx-auto text-center lg:text-left" data-aos="fade-up">
                     <h1 className="text-2xl xl:text-3xl font-heebo font-bold">
                         We go beyond the ordinary, showing true commitment and care.
                     </h1>
@@ -31,9 +31,9 @@ const ExtraCare = () => {
                 </div>
 
                 {/* Right side */}
-                <div className="w-full lg:w-5/12 mx-auto" data-aos="fade-left">
-                    <div className="flex justify-center lg:justify-end items-center">
-                        <img src={support} alt="Support" className="w-full max-w-full h-auto" />
+                <div className="w-full md:w-5/12 mx-auto" data-aos="fade-up">
+                    <div className="flex justify-center md:justify-end items-center">
+                        <img src={support} alt="Support" className="w-[500px] md:w-full h-auto" />
                     </div>
                 </div>
             </div>

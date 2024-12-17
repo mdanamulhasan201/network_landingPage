@@ -93,7 +93,7 @@ const ResponsiveNavbar = () => {
 
     // Helper function to add active class
     const getActiveClass = (path) => {
-        return location.pathname === path ? 'text-Blue font-semibold' : 'text-gray-600';
+        return location.pathname === path ? 'text-Blue font-bold' : 'font-bold';
     };
 
     // Dropdown Component
@@ -158,7 +158,7 @@ const ResponsiveNavbar = () => {
     );
 
     return (
-        <nav className="border  ">
+        <nav className="border">
             <div className="max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <Link to="/" className="flex items-center space-x-2 ">
@@ -248,12 +248,12 @@ const ResponsiveNavbar = () => {
                     <Dropdown
                         items={servicesDropdownItems}
                         dropdownName="services"
-                        className="text-white"
+                        className=" font-bold"
                     />
                     <Dropdown
                         items={aboutDropdownItems}
                         dropdownName="about"
-                        className="text-white"
+                        className=" font-bold"
                     />
 
                     {/* Additional Links */}

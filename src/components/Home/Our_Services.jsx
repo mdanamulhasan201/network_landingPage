@@ -121,7 +121,7 @@ const Our_Services = () => {
 
     return (
         <div className="bg-slate-50 relative">
-            <div className="max-w-screen-xl px-4 py-16 mx-auto">
+            <div className="max-w-screen-xl px-4 py-16 mx-auto ">
                 <h1
                     className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
                     data-aos="fade-down"

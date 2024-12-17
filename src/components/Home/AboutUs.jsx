@@ -20,7 +20,7 @@ const AboutUs = () => {
 
 
     return (
-        <div className="max-w-screen-xl mx-auto px-4 py-16">
+        <div className="max-w-screen-xl mx-auto px-4 py-16 ">
 
            
             {/* Title Section */}
@@ -36,7 +36,7 @@ const AboutUs = () => {
             </h1>
 
             {/* Content Section */}
-            <div className="mt-8" data-aos="fade-up">
+            <div className="mt-8 text-center md:text-start" data-aos="fade-up">
                 <h1 className="text-2xl xl:text-3xl font-heebo font-bold">
                     Dedicated to Delivering Value
                 </h1>
