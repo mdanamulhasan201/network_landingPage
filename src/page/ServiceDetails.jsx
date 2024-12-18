@@ -2,6 +2,9 @@ import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import dataManagementImg from '../assets/servicesBg/datamanagementResize.jpg'
 import AffiliateServicesImg from '../assets/servicesBg/Affiliate-ServicesResize.jpg'
+import digitalworld from '../assets/servicesBg/digitalworld.png'
+import data from '../assets/servicesBg/data.png'
+import { FaCheckCircle } from "react-icons/fa";
 const ServiceDetails = () => {
     const { slug } = useParams();
 
@@ -29,27 +32,27 @@ const ServiceDetails = () => {
 
             subContent: [
                 {
-                    title: "In the digital world, data is power.",
-                    subTitle: "We provide the best Data Management services",
-                    description: "We provide the best Data Management services",
-                    image: "https://via.placeholder.com/400",
+                    title: "In the digital era, data is a powerful asset.",
+                    description: "As data flows through our system in real-time, we add extra information to each record, making it more valuable to you. Our services are fully customized to meet the needs of each client. Our experts analyze the data thoroughly to deliver the best results. Everyone has data, but Diablo helps you understand it. We improve your data and help you make money from it using multi-channel marketing solutions.",
+                    image: digitalworld,
                 },
                 [
                     {
-                        title: "After all, data is only relevant if you fully understand the Consumer.",
-                        subtitle: "We create highly targeted audiences with a multitude of verticals.",
+                        title: "Ultimately, data is only valuable if you deeply understand the consumer",
+
+                        subtitle: "We generate highly specific audiences across various sectors.",
                         audiences: [
                             {
-                                title: "Financial, Retail, Household Products, Insurance, Debt, Legal, Disability, Auto, Health, Fitness, And so many others.",
+                                data: "Financial, Retail, Household Products, Insurance, Debt, Legal, Disability, Auto, Health, Fitness, And so many others.",
                             },
                         ],
                     },
                 ],
                 [
                     {
-                        title: "We provide the best Data Management services",
-                        description: "We provide the best Data Management services",
-                        image: "https://via.placeholder.com/400",
+                        titles: "We provide the best Data Management services",
+                        descriptions: "We recognize that data isn’t just for measuring outcomes—it’s about leveraging intelligent systems to give your business predictive insights and a competitive edge. Our tools allow us to break down and analyze data to create highly focused audiences. With our proprietary reporting platform, we track performance metrics and revenue effectively.",
+                        image: data,
                     },
                 ],
             ],
@@ -136,7 +139,7 @@ const ServiceDetails = () => {
                 <meta name="description" content={service.subtitle} />
             </Helmet>
 
-            <div className=" ">
+            <div className="bg-slate-50 ">
                 <div className="relative w-full h-auto">
                     {/* Background Image */}
                     <img
@@ -161,7 +164,7 @@ const ServiceDetails = () => {
                     {/* Description Section */}
                     <div className="my-14 max-w-screen-sm mx-auto">
                         {service.description.map((desc, index) => (
-                            <div key={index} className="mb-4">
+                            <div key={index} className="">
                                 {desc.descriptionTitle && <p className="text-xl font-heebo leading-8 text-gray-600 mb-5">{desc.descriptionTitle}</p>}
 
                                 {/* Display details as an ordered list */}
@@ -178,7 +181,7 @@ const ServiceDetails = () => {
 
                                 {desc.expertise &&
                                     desc.expertise.map((item, idx) => (
-                                        <p key={idx} className="ml-4">- {item.details}</p>
+                                        <p key={idx} className="ml-4">{item.details}</p>
                                     ))}
                             </div>
                         ))}
@@ -188,27 +191,72 @@ const ServiceDetails = () => {
 
                     {/* Sub Content Section */}
                     <div>
-                        <h2 className="text-2xl font-semibold mb-2">Sub Content</h2>
                         {service.subContent.map((sub, index) =>
                             Array.isArray(sub) ? (
-                                <div key={index} className="ml-4">
+                                <div key={index} className=" my-14">
                                     {sub.map((item, idx) => (
-                                        <div key={idx} className="mb-4">
-                                            {item.title && <p><strong>Title:</strong> {item.title}</p>}
-                                            {item.subtitle && <p><strong>Subtitle:</strong> {item.subtitle}</p>}
-                                            {item.description && <p><strong>Description:</strong> {item.description}</p>}
+                                        <div key={idx} className="mb-4 ">
+
+                                            {item.title && <p className="text-3xl font-heebo text-center mb-4 font-semibold text-[#000872]">{item.title}</p>}
+
+                                            {item.subtitle && <p className="text-lg my-5 text-center text-gray-600 font-heebo">{item.subtitle}</p>}
+
+                                            <div className="max-w-screen-md mx-auto">
+                                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 justify-center items-center">
+                                                    {
+                                                        item.audiences &&
+                                                        item.audiences[0].data.split(", ").map((aud, audIdx) => (
+                                                            <div key={audIdx} className="flex items-center space-x-2 ml-4">
+                                                                {/* Checkmark Icon */}
+                                                                <FaCheckCircle className="text-[#783FC7] text-xl" />
+                                                                {/* Audience Text */}
+                                                                <span className="text-[#000872] text-xl font-semibold">{aud}</span>
+                                                            </div>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col md:flex-row justify-between items-center gap-10 my-0 md:my-5">
+
+                                                <div className="w-full md:w-5/12">
+                                                    {
+                                                        item.image && <img src={item.image} alt="service" className="w-full " />
+                                                    }
+                                                </div>
+
+                                                <div className="w-full md:w-7/12">
+                                                    <div >
+                                                        {item.titles && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-[#000872]"> {item.titles}</p>}
+                                                    </div>
+                                                    <div>
+                                                        {item.descriptions && <p className="text-lg md:text-xl font-heebo leading-8 text-gray-600"> {item.descriptions}</p>}
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
                                             {item.audiences &&
                                                 item.audiences.map((aud, audIdx) => (
-                                                    <p key={audIdx} className="ml-4">- {aud.title}</p>
+                                                    <p key={audIdx} className="ml-4">{aud.title}</p>
                                                 ))}
                                         </div>
                                     ))}
                                 </div>
                             ) : (
                                 <div key={index} className="mb-4">
-                                    {sub.title && <p><strong>Title:</strong> {sub.title}</p>}
-                                    {sub.subTitle && <p><strong>Subtitle:</strong> {sub.subTitle}</p>}
-                                    {sub.description && <p><strong>Description:</strong> {sub.description}</p>}
+                                    <div className="flex flex-col md:flex-row justify-between items-center">
+                                        <div className="w-full md:w-1/2">
+                                            {sub.title && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-[#000872]"> {sub.title}</p>}
+                                            {sub.description && <p className="text-lg md:text-xl font-heebo leading-8 text-gray-600"> {sub.description}</p>}
+                                        </div>
+
+                                        <div className="w-full md:w-1/2">
+                                            {
+                                                sub.image && <img src={sub.image} alt="service" className="w-full " />
+                                            }
+                                        </div>
+                                    </div>
                                 </div>
                             )
                         )}
