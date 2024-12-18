@@ -5,8 +5,25 @@ import AffiliateServicesImg from '../assets/servicesBg/Affiliate-ServicesResize.
 import digitalworld from '../assets/servicesBg/digitalworld.png'
 import data from '../assets/servicesBg/data.png'
 import { FaCheckCircle } from "react-icons/fa";
+import ContactUs from "../components/Home/ContactUs";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const ServiceDetails = () => {
     const { slug } = useParams();
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120,
+            debug: true,
+        });
+        return () => {
+            AOS.refresh();
+        };
+    }, []);
 
     const services = [
         {
@@ -58,9 +75,14 @@ const ServiceDetails = () => {
             ],
             ourProcess: [
                 { id: 1, title: "Evaluate & Assess our data sources" },
-                { id: 2, title: "Strategically plan & implement" },
-                { id: 3, title: "Manage & Optimize" },
-                { id: 4, title: "Repeat" },
+                { id: 2, title: "Compliance review" },
+                { id: 3, title: "Design data strategy" },
+                { id: 4, title: "Receive data via API in real-time" },
+                { id: 5, title: "Hygiene emails and postal addresses" },
+                { id: 6, title: "Append demo’s and behaviors" },
+                { id: 7, title: "Monetize data using multi-channel marketing" },
+                { id: 8, title: "Analyze effectiveness using proprietary reporting tools" },
+                { id: 9, title: "Feedback & Optimize" },
             ],
         },
         {
@@ -151,7 +173,7 @@ const ServiceDetails = () => {
                     {/* Overlay Content */}
                     <div className="absolute inset-0 flex items-center bg-[#4144BB] bg-opacity-60 backdrop-blur-[3px]">
                         <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto ">
-                            <div className="text-left font-heebo ">
+                            <div className="text-left font-heebo " data-aos="fade-down">
                                 <h1 className="uppercase font-heebo font-bold text-xl xl:text-2xl text-gray-300">Services</h1>
                                 <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-white">{service.title}</h1>
                                 <p className="text-lg text-white">{service.subtitle}</p>
@@ -160,9 +182,9 @@ const ServiceDetails = () => {
                     </div>
                 </div>
 
-                <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto ">
+                <div className="max-w-screen-xl pt-16 px-5 sm:px-10 xl:px-5 w-full mx-auto ">
                     {/* Description Section */}
-                    <div className="my-14 max-w-screen-sm mx-auto">
+                    <div className="my-14 max-w-screen-sm mx-auto" data-aos="fade-up">
                         {service.description.map((desc, index) => (
                             <div key={index} className="">
                                 {desc.descriptionTitle && <p className="text-xl font-heebo leading-8 text-gray-600 mb-5">{desc.descriptionTitle}</p>}
@@ -201,7 +223,7 @@ const ServiceDetails = () => {
 
                                             {item.subtitle && <p className="text-lg my-5 text-center text-gray-600 font-heebo">{item.subtitle}</p>}
 
-                                            <div className="max-w-screen-md mx-auto">
+                                            <div className="max-w-screen-md mx-auto" data-aos="fade-up">
                                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 justify-center items-center">
                                                     {
                                                         item.audiences &&
@@ -218,13 +240,13 @@ const ServiceDetails = () => {
                                             </div>
                                             <div className="flex flex-col md:flex-row justify-between items-center gap-10 my-0 md:my-5">
 
-                                                <div className="w-full md:w-5/12">
+                                                <div className="w-full md:w-5/12" data-aos="fade-up">
                                                     {
                                                         item.image && <img src={item.image} alt="service" className="w-full " />
                                                     }
                                                 </div>
 
-                                                <div className="w-full md:w-7/12">
+                                                <div className="w-full md:w-7/12" data-aos="fade-up">
                                                     <div >
                                                         {item.titles && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-[#000872]"> {item.titles}</p>}
                                                     </div>
@@ -246,12 +268,12 @@ const ServiceDetails = () => {
                             ) : (
                                 <div key={index} className="mb-4">
                                     <div className="flex flex-col md:flex-row justify-between items-center">
-                                        <div className="w-full md:w-1/2">
+                                        <div className="w-full md:w-1/2" data-aos="fade-up">
                                             {sub.title && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-[#000872]"> {sub.title}</p>}
                                             {sub.description && <p className="text-lg md:text-xl font-heebo leading-8 text-gray-600"> {sub.description}</p>}
                                         </div>
 
-                                        <div className="w-full md:w-1/2">
+                                        <div className="w-full md:w-1/2" data-aos="fade-up">
                                             {
                                                 sub.image && <img src={sub.image} alt="service" className="w-full " />
                                             }
@@ -261,17 +283,30 @@ const ServiceDetails = () => {
                             )
                         )}
                     </div>
+                </div>
 
-                    {/* Our Process Section */}
-                    <div>
-                        <h2 className="text-2xl font-semibold mb-2">Our Process</h2>
-                        <ul className="list-disc pl-6">
-                            {service.ourProcess.map((process) => (
-                                <li key={process.id}>{process.title}</li>
-                            ))}
-                        </ul>
+                {/* Our Process Section */}
+                <div >
+                    <div className="flex flex-col items-center justify-center bg-slate-100 py-10">
+                        <h2 className="text-2xl text-center md:text-3xl font-heebo font-semibold mb-10 text-[#000872]">
+                            Our Process
+                        </h2>
+                        <div className="w-full flex justify-center" data-aos="fade-up">
+                            <ol className="list-decimal pl-4 grid grid-cols-1 md:grid-cols-2 gap-y-4">
+                                {service.ourProcess.map((process) => (
+                                    <li
+                                        key={process.id}
+                                        className="text-xl font-heebo font-semibold text-left"
+                                    >
+                                        {process.title}
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
                     </div>
                 </div>
+
+                <ContactUs />
             </div>
         </>
     );
