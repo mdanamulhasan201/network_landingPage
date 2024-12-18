@@ -7,6 +7,8 @@ import ContactUs from "../page/ContactUs";
 import ServiceDetails from "../page/ServiceDetails";
 import Login from "../page/Login";
 import Register from "../page/Register";
+import TeamMembers from "../page/TeamMembers";
+import Career from "../page/Career";
 
 
 export const router = createBrowserRouter([
@@ -26,6 +28,14 @@ export const router = createBrowserRouter([
             {
                 path: "contact",
                 element: <ContactUs />
+            },
+            {
+                path: "team",
+                element: <TeamMembers/>
+            },
+            {
+                path: "careers",
+                element: <Career/>
             },
             {
                 path: "login",

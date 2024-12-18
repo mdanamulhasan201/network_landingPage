@@ -146,7 +146,7 @@ const ResponsiveNavbar = () => {
                 onClick={() => toggleDropdown(dropdownName)}
                 className={`
                     flex items-center space-x-2 text-black
-                    ${isMobile ? 'w-full justify-between text-white ' : 'hover:text-gray-500  transform duration-300'}
+                    ${isMobile ? 'w-full justify-between text-white' : 'hover:text-gray-500 transform duration-300'}
                 `}
             >
                 <span>{dropdownName.charAt(0).toUpperCase() + dropdownName.slice(1)}</span>
@@ -169,16 +169,18 @@ const ResponsiveNavbar = () => {
                         className={`
                             ${isMobile
                                 ? 'pl-4 mt-2'
-                                : 'absolute z-50 top-full left-0 mt-2 bg-white border text-gray-800 rounded shadow-lg w-48 py-2'}`}
+                                : 'absolute z-50 top-full left-0 mt-2 bg-white border text-gray-800 rounded shadow-lg w-48 py-2'}
+                        `}
                     >
                         {items.map((item, index) => (
                             <Link
                                 key={index}
                                 to={item.path}
+                                onClick={() => setActiveDropdown(null)}
                                 className={`
                                     block ${isMobile
-                                        ? 'py-2  text-white hover:text-gray-500 transform duration-300 text-lg'
-                                        : 'px-4  py-2  hover:text-Blue transform duration-300'} 
+                                        ? 'py-2 text-white hover:text-gray-500 transform duration-300 text-lg'
+                                        : 'px-4 py-2 hover:text-Blue transform duration-300'}
                                     ${getActiveClass(item.path)}
                                 `}
                             >
@@ -191,8 +193,9 @@ const ResponsiveNavbar = () => {
         </div>
     );
 
+
     return (
-        <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-50' : 'bg-transparent'}`}>
+        <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-50 shadow-md' : 'bg-transparent'}`}>
             <div className="px-5 md:px-5 2xl:px-20 py-5 flex items-center justify-between">
                 {/* Logo */}
 
@@ -206,8 +209,6 @@ const ResponsiveNavbar = () => {
                         </Link>
                     )}
                 </motion.div>
-
-
 
                 <div>
                     {/* The motion div that hides on scroll */}
@@ -289,7 +290,7 @@ const ResponsiveNavbar = () => {
                         {isMenuOpen ? (
                             <></>
                         ) : (
-                            <CgMenuRight className={` text-4xl ${isScrolled ? 'text-Blue' : 'bg-transparent'}`} />
+                            <CgMenuRight  className={` text-4xl ${isScrolled ? 'text-Blue' : 'bg-transparent'}`} />
                         )}
                     </button>
                 </div>
@@ -320,7 +321,7 @@ const ResponsiveNavbar = () => {
                                 initial="closed"
                                 animate="open"
                                 exit="closed"
-                                className="fixed top-0 right-0 w-72 md:w-[500px] lg:w-[650px] xl:w-[800px] h-full bg-[#19192200] text-white z-50 px-10 md:px-20 py-20 overflow-y-auto"
+                                className="fixed overflow-hidden top-0 right-0 w-72 md:w-[500px] lg:w-[650px] xl:w-[800px] h-full bg-[#19192200] text-white z-50 px-10 md:px-20 py-20 overflow-y-auto"
                             >
                                 {/* Sidebar Links */}
                                 <motion.div
