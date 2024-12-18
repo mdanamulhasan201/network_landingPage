@@ -31,11 +31,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "team",
-                element: <TeamMembers/>
+                element: <TeamMembers />
             },
             {
                 path: "careers",
-                element: <Career/>
+                element: <Career />
             },
             {
                 path: "login",
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "register",
-                element: <Register/>
+                element: <Register />
             }
         ]
     },
