@@ -14,11 +14,19 @@ const ServiceDetails = () => {
             bannerImage: dataManagementImg,
             description: [
                 {
-                    descriptionTitle: "We provide the best Data Management services",
-                    Title1: "This is the best",
-                    Title2: "sdufhgs",
-                },
+                    descriptionTitle: "It seems like you're referencing data services from MCash Media. Could you clarify what exactly you need assistance with regarding the demographics, psychographics, or the type of data? If you're looking to integrate this information into a project, I can help guide you through the process!",
+                    details: [
+                        {
+                            Title1: "Gathered from our own properties.",
+
+                        },
+                        {
+                            Title2: "Collected from our partners' feeds."
+                        }
+                    ]
+                }
             ],
+
             subContent: [
                 {
                     title: "In the digital world, data is power.",
@@ -138,71 +146,83 @@ const ServiceDetails = () => {
                     />
 
                     {/* Overlay Content */}
-                    <div className="absolute inset-0 flex items-center bg-[#181E2C] bg-opacity-70 backdrop-blur-[4px]">
-                        <div className="max-w-screen-xl w-full mx-auto ">
-                            <div className="text-left">
-                                <h1 className="uppercase font-heebo font-bold text-2xl text-[#F029C9]">Services</h1>
-                                <h1 className="text-3xl font-bold mb-4 text-white">{service.title}</h1>
-                                <p className="text-lg mb-4 text-white">{service.subtitle}</p>
+                    <div className="absolute inset-0 flex items-center bg-[#4144BB] bg-opacity-60 backdrop-blur-[3px]">
+                        <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto ">
+                            <div className="text-left font-heebo ">
+                                <h1 className="uppercase font-heebo font-bold text-xl xl:text-2xl text-gray-300">Services</h1>
+                                <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-white">{service.title}</h1>
+                                <p className="text-lg text-white">{service.subtitle}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-
-                {/* Description Section */}
-                <div>
-                    <h2 className="text-2xl font-semibold mb-2">Description</h2>
-                    {service.description.map((desc, index) => (
-                        <div key={index} className="mb-4">
-                            {desc.descriptionTitle && <p><strong>Title:</strong> {desc.descriptionTitle}</p>}
-                            {desc.Title1 && <p><strong>Point 1:</strong> {desc.Title1}</p>}
-                            {desc.Title2 && <p><strong>Point 2:</strong> {desc.Title2}</p>}
-                            {desc.expertise &&
-                                desc.expertise.map((item, idx) => (
-                                    <p key={idx} className="ml-4">- {item.details}</p>
-                                ))}
-                        </div>
-                    ))}
-                </div>
-
-                {/* Sub Content Section */}
-                <div>
-                    <h2 className="text-2xl font-semibold mb-2">Sub Content</h2>
-                    {service.subContent.map((sub, index) =>
-                        Array.isArray(sub) ? (
-                            <div key={index} className="ml-4">
-                                {sub.map((item, idx) => (
-                                    <div key={idx} className="mb-4">
-                                        {item.title && <p><strong>Title:</strong> {item.title}</p>}
-                                        {item.subtitle && <p><strong>Subtitle:</strong> {item.subtitle}</p>}
-                                        {item.description && <p><strong>Description:</strong> {item.description}</p>}
-                                        {item.audiences &&
-                                            item.audiences.map((aud, audIdx) => (
-                                                <p key={audIdx} className="ml-4">- {aud.title}</p>
-                                            ))}
-                                    </div>
-                                ))}
-                            </div>
-                        ) : (
+                <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto ">
+                    {/* Description Section */}
+                    <div className="my-14 max-w-screen-sm mx-auto">
+                        {service.description.map((desc, index) => (
                             <div key={index} className="mb-4">
-                                {sub.title && <p><strong>Title:</strong> {sub.title}</p>}
-                                {sub.subTitle && <p><strong>Subtitle:</strong> {sub.subTitle}</p>}
-                                {sub.description && <p><strong>Description:</strong> {sub.description}</p>}
-                            </div>
-                        )
-                    )}
-                </div>
+                                {desc.descriptionTitle && <p className="text-xl font-heebo leading-8 text-gray-600 mb-5">{desc.descriptionTitle}</p>}
 
-                {/* Our Process Section */}
-                <div>
-                    <h2 className="text-2xl font-semibold mb-2">Our Process</h2>
-                    <ul className="list-disc pl-6">
-                        {service.ourProcess.map((process) => (
-                            <li key={process.id}>{process.title}</li>
+                                {/* Display details as an ordered list */}
+                                {desc.details && (
+                                    <ol className="list-decimal pl-4">
+                                        {desc.details.map((detail, detailIndex) => (
+                                            <li key={detailIndex} className="text-xl text-[#000872] font-heebo font-semibold">
+                                                {detail.Title1 && <p className="mb-2">{detail.Title1}</p>}
+                                                {detail.Title2 && <p>{detail.Title2}</p>}
+                                            </li>
+                                        ))}
+                                    </ol>
+                                )}
+
+                                {desc.expertise &&
+                                    desc.expertise.map((item, idx) => (
+                                        <p key={idx} className="ml-4">- {item.details}</p>
+                                    ))}
+                            </div>
                         ))}
-                    </ul>
+                    </div>
+
+
+
+                    {/* Sub Content Section */}
+                    <div>
+                        <h2 className="text-2xl font-semibold mb-2">Sub Content</h2>
+                        {service.subContent.map((sub, index) =>
+                            Array.isArray(sub) ? (
+                                <div key={index} className="ml-4">
+                                    {sub.map((item, idx) => (
+                                        <div key={idx} className="mb-4">
+                                            {item.title && <p><strong>Title:</strong> {item.title}</p>}
+                                            {item.subtitle && <p><strong>Subtitle:</strong> {item.subtitle}</p>}
+                                            {item.description && <p><strong>Description:</strong> {item.description}</p>}
+                                            {item.audiences &&
+                                                item.audiences.map((aud, audIdx) => (
+                                                    <p key={audIdx} className="ml-4">- {aud.title}</p>
+                                                ))}
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div key={index} className="mb-4">
+                                    {sub.title && <p><strong>Title:</strong> {sub.title}</p>}
+                                    {sub.subTitle && <p><strong>Subtitle:</strong> {sub.subTitle}</p>}
+                                    {sub.description && <p><strong>Description:</strong> {sub.description}</p>}
+                                </div>
+                            )
+                        )}
+                    </div>
+
+                    {/* Our Process Section */}
+                    <div>
+                        <h2 className="text-2xl font-semibold mb-2">Our Process</h2>
+                        <ul className="list-disc pl-6">
+                            {service.ourProcess.map((process) => (
+                                <li key={process.id}>{process.title}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </>
