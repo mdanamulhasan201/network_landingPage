@@ -85,60 +85,8 @@ const ServiceDetails = () => {
                 { id: 9, title: "Feedback & Optimize" },
             ],
         },
-        {
-            id: 2,
-            slug: "affiliate-services",
-            title: "Affiliate Services",
-            subtitle: "Connect to new audiences at scale.",
-            bannerImage: AffiliateServicesImg,
-            description: [
-                {
-                    descriptionTitle: "Expand your reach with our affiliate services.",
-                    Title1: "Grow your audience",
-                },
-            ],
-            subContent: [
-                {
-                    title: "Maximize your affiliate network.",
-                    subTitle: "Achieve scalable growth.",
-                    description: "We connect you to the right platforms and partners.",
-                    image: "https://via.placeholder.com/400",
-                },
-            ],
-            ourProcess: [
-                { id: 1, title: "Identify potential partners" },
-                { id: 2, title: "Set up tracking and reporting" },
-                { id: 3, title: "Launch and optimize campaigns" },
-            ],
-        },
-        {
-            id: 3,
-            slug: "legal-marketing",
-            title: "Legal Marketing",
-            subtitle: "Experience real growth with Facebook marketing.",
-            bannerImage: "https://via.placeholder.com/600",
-            description: [
-                {
-                    descriptionTitle: "Tailored marketing strategies for legal professionals.",
-                    expertise: [
-                        { details: "Mass Tort, Personal Injury, Criminal Defense Family" },
-                    ],
-                },
-            ],
-            subContent: [
-                {
-                    title: "Engage your audience with expert marketing.",
-                    subTitle: "Your success is our priority.",
-                    description: "We specialize in creating impactful campaigns.",
-                    image: "https://via.placeholder.com/400",
-                },
-            ],
-            ourProcess: [
-                { id: 1, title: "Understand client needs" },
-                { id: 2, title: "Design and implement campaigns" },
-                { id: 3, title: "Track and analyze results" },
-            ],
-        },
+       
+        
     ];
 
     const service = services.find((service) => service.slug === slug);
@@ -286,7 +234,7 @@ const ServiceDetails = () => {
                 </div>
 
                 {/* Our Process Section */}
-                <div >
+                <div className="mb-10 px-5 sm:px-10 xl:px-5">
                     <div className="flex flex-col items-center justify-center bg-slate-100 py-10">
                         <h2 className="text-2xl text-center md:text-3xl font-heebo font-semibold mb-10 text-[#000872]">
                             Our Process

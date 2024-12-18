@@ -109,8 +109,8 @@ const ResponsiveNavbar = () => {
     const containerVariants = {
         open: {
             transition: {
-                staggerChildren: 0.3, 
-                delayChildren: 0.3, 
+                staggerChildren: 0.3,
+                delayChildren: 0.3,
             },
         },
         closed: {},
@@ -195,9 +195,19 @@ const ResponsiveNavbar = () => {
         <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-50' : 'bg-transparent'}`}>
             <div className="px-5 md:px-5 2xl:px-20 py-5 flex items-center justify-between">
                 {/* Logo */}
-                <Link to="/" className="flex items-center space-x-2">
-                    <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" />
-                </Link>
+
+                <motion.div
+                    initial={{ opacity: 1, y: 0 }}
+                    animate={isScrolled ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}>
+                    {!isScrolled && (
+                        <Link to="/" className="flex items-center space-x-2">
+                            <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" />
+                        </Link>
+                    )}
+                </motion.div>
+
+
 
                 <div>
                     {/* The motion div that hides on scroll */}
@@ -232,11 +242,18 @@ const ResponsiveNavbar = () => {
                             transition={{ duration: 0.3 }}
                             className="fixed top-0 left-0 w-full "
                         >
-                            <div className="flex items-center justify-between px-10 2xl:px-20 py-5">
+                            <div className="flex items-center justify-between px-5 2xl:px-20 py-5">
                                 {/* Logo for scrolling state */}
-                                <Link to="/" className="flex items-center space-x-2">
-                                    {/* <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" /> */}
-                                </Link>
+                                <motion.div
+                                    initial={{ x: -20 }}
+                                    animate={{ x: 0 }}
+                                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                                >
+                                    <Link to="/" className="flex items-center space-x-2">
+                                        <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" />
+                                    </Link>
+                                </motion.div>
+
 
                                 {/* Navigation Links */}
                                 <div className="hidden md:flex items-center space-x-6 font-heebo text-lg">
