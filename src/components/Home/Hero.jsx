@@ -45,7 +45,7 @@ const Hero = () => {
     };
 
     return (
-        <motion.div className="relative overflow-hidden py-5 bg-gradient-to-r from-[#f8eaff] to-[#ffffff] text-black group ">
+        <motion.div className="relative overflow-hidden py-5 bg-gradient-to-r from-[#f8ecfc] to-[#ffffff] text-black group ">
             {/* shaves bg style added */}
             <div>
 

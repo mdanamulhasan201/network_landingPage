@@ -261,7 +261,7 @@ const ServiceDetails = () => {
                         className="w-full h-96"
                         style={{
                             clipPath: "polygon(0 0, 100% 0, 100% 70%, 0 100%)",
-                            background: "linear-gradient(to bottom right, #4244BB, #733FC5)",
+                            background: "linear-gradient(to bottom right, #733FC5 , #4244BB)",
                         }}
                     ></div>
 

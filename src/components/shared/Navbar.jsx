@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CgMenuRight, CgMenuRightAlt } from 'react-icons/cg';
 import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import logo from '../../assets/logo.png';
+import logos from '../../assets/logos.png';
 
 const ResponsiveNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -205,7 +206,7 @@ const ResponsiveNavbar = () => {
                     transition={{ duration: 0.5 }}>
                     {!isScrolled && (
                         <Link to="/" className="flex items-center space-x-2">
-                            <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" />
+                            <img src={logo} alt="Logo" className="w-40 h-12 md:w-56 md:h-14" />
                         </Link>
                     )}
                 </motion.div>
@@ -243,15 +244,15 @@ const ResponsiveNavbar = () => {
                             transition={{ duration: 0.3 }}
                             className="fixed top-0 left-0 w-full "
                         >
-                            <div className="flex items-center justify-between px-5 2xl:px-20 py-5">
+                            <div className="flex items-center justify-between px-5 2xl:px-20 py-3">
                                 {/* Logo for scrolling state */}
                                 <motion.div
-                                    initial={{ x: -20 }}
-                                    animate={{ x: 0 }}
+                                    initial={{ y: -20 }}
+                                    animate={{ y: 0 }}
                                     transition={{ duration: 0.5, ease: "easeInOut" }}
                                 >
                                     <Link to="/" className="flex items-center space-x-2">
-                                        <img src={logo} alt="Logo" className="w-36 h-8 md:w-40 md:h-10" />
+                                        <img src={logos} alt="Logo" className="w-28 h-12 md:w-36 md:h-14"/>
                                     </Link>
                                 </motion.div>
 
