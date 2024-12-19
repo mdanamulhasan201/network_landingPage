@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CgMenuRight, CgMenuRightAlt } from 'react-icons/cg';
 import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import logo from '../../assets/logoo.png';
+import logo from '../../assets/logo.png';
 
 const ResponsiveNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

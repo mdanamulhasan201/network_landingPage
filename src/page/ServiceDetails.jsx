@@ -17,7 +17,6 @@ import marketingImage from '../assets/servicesBg/media/maketing.png'
 import searchingImgs from '../assets/servicesBg/media/searchingImg.png'
 
 import { FaCheckCircle, FaCheckSquare } from "react-icons/fa";
-import ContactUs from "../components/Home/ContactUs";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -257,24 +256,34 @@ const ServiceDetails = () => {
 
             <div className="bg-slate-50 ">
                 <div className="relative w-full h-auto">
-                    {/* Background Image */}
-                    <img
-                        src={service.bannerImage || "image not found"}
-                        alt={service.title}
-                        className="w-full h-96 object-cover"
-                    />
+                    {/* Background Color with Angled Division */}
+                    <div
+                        className="w-full h-96"
+                        style={{
+                            clipPath: "polygon(0 0, 100% 0, 100% 70%, 0 100%)",
+                            background: "linear-gradient(to bottom right, #4244BB, #733FC5)",
+                        }}
+                    ></div>
 
                     {/* Overlay Content */}
-                    <div className="absolute inset-0 flex items-center bg-[#4144BB] bg-opacity-60 backdrop-blur-[3px]">
-                        <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto ">
-                            <div className="text-left font-heebo " data-aos="fade-down">
+                    <div
+                        className="absolute inset-0 flex items-center shadow-lg backdrop-blur-[3px]"
+                        style={{
+                            clipPath: "polygon(0 0, 100% 0, 100% 70%, 0 100%)",
+                        }}
+                    >
+                        <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto">
+                            <div className="text-left font-heebo" data-aos="fade-down">
                                 <h1 className="uppercase font-heebo font-bold text-xl xl:text-2xl text-gray-300">Services</h1>
-                                <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-white">{service.title}</h1>
+                                <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-white">
+                                    {service.title}
+                                </h1>
                                 <p className="text-lg text-white">{service.subtitle}</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto ">
 
@@ -401,8 +410,8 @@ const ServiceDetails = () => {
                 {
                     service.ourProcess && (
                         <div className="bg-slate-100">
-                            <div className="mb-10 max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-5">
-                                <div className="flex flex-col items-center justify-center  py-10">
+                            <div className=" max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-5">
+                                <div className="flex flex-col items-center justify-center  py-20">
                                     <h2 className="text-2xl text-center md:text-3xl font-heebo font-semibold mb-10 text-[#000872]">
                                         Our Process
                                     </h2>
@@ -423,8 +432,6 @@ const ServiceDetails = () => {
                         </div>
                     )
                 }
-
-                <ContactUs />
             </div>
         </>
     );

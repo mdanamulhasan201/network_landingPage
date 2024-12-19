@@ -9,6 +9,7 @@ import Login from "../page/Login";
 import Register from "../page/Register";
 import TeamMembers from "../page/TeamMembers";
 import Career from "../page/Career";
+import AboutUs from "../page/AboutUs";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
             {
                 path: "contact",
                 element: <ContactUs />
+            },
+            {
+                path: "about",
+                element: <AboutUs/>
             },
             {
                 path: "team",

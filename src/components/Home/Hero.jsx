@@ -45,7 +45,7 @@ const Hero = () => {
     };
 
     return (
-        <motion.div className="relative overflow-hidden py-5 bg-gradient-to-r from-[#f8eaff] to-[#ffffff] text-black group">
+        <motion.div className="relative overflow-hidden py-5 bg-gradient-to-r from-[#f8eaff] to-[#ffffff] text-black group ">
             {/* shaves bg style added */}
             <div>
 
@@ -82,7 +82,7 @@ const Hero = () => {
                 <div className="text-center md:text-left md:w-full">
                     {/* Animated Headline */}
                     <motion.h1
-                        className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-5xl font-extrabold tracking-tight font-heebo text-[#000872] flex flex-wrap justify-center md:justify-start"
+                        className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-5xl font-extrabold tracking-tight font-heebo text-[#0C312B] flex flex-wrap justify-center md:justify-start"
                         aria-label={headline}
                     >
                         {headline.split("").map((char, index) => (

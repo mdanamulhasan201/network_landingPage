@@ -1,9 +1,20 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
-    const currentYear = new Date().getFullYear(); 
+    const currentYear = new Date().getFullYear();
 
     return (
-        <div className="text-center py-10 bg-slate-50 text-gray-600 font-heebo border">
-            © {currentYear} MCash Media. All rights reserved.
+        <div className=" py-5 bg-[#004AAD] border-t border-gray-500 text-gray-300 flex flex-col md:flex-row gap-2 justify-between items-center px-5 md:px-5 2xl:px-20">
+            <p className="font-heebo"> © {currentYear} MCash Media. All rights reserved.</p>
+
+            <ul className="flex items-center gap-5 font-heebo ">
+                <li>
+                    <Link to='/' className="hover:underline hover:text-white transform duration-300">Privacy Policy</Link>
+                </li>
+                <li>
+                    <Link to='/' className="hover:underline hover:text-white transform duration-300">Terms of Us</Link>
+                </li>
+            </ul>
         </div>
     );
 };

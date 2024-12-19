@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
+import ContactUs from "../components/Home/ContactUs";
 
 const Main = () => {
     const location = useLocation();
@@ -14,7 +15,12 @@ const Main = () => {
             <div className="flex-grow">
                 <Outlet />
             </div>
-            {!hideNavbarAndFooter && <Footer />}
+            {!hideNavbarAndFooter &&
+                <div>
+                    <ContactUs />
+                    <Footer />
+                </div>
+            }
         </div>
     );
 };
