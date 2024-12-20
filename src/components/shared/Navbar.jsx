@@ -217,38 +217,38 @@ const Navbar = () => {
                     {
                         !isScrolled && (
                             <motion.div
-                            initial={{ opacity: 1 }}
-                            animate={{ opacity: isScrolled ? 0 : 1 }}
-                            transition={{ duration: 0.3 }}
-                            className="hidden md:block mr-5"
-                        >
-                            <button
-                                onClick={toggleMenu}
-                                className="z-50 text-white text-3xl"
-                                onMouseEnter={() => setIsHovered(true)}
-                                onMouseLeave={() => setIsHovered(false)}
+                                initial={{ opacity: 1 }}
+                                animate={{ opacity: isScrolled ? 0 : 1 }}
+                                transition={{ duration: 0.3 }}
+                                className="hidden md:block mr-5"
                             >
-                                {isMenuOpen ? (
-                                    <></>
-                                ) : isHovered ? (
-                                    <motion.div
-                                        initial={{ scale: 1 }}
-                                        animate={{ scale: 1.2 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <CgMenuRightAlt className="text-white text-4xl" />
-                                    </motion.div>
-                                ) : (
-                                    <motion.div
-                                        initial={{ scale: 1.2 }}
-                                        animate={{ scale: 1 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <CgMenuRight className="text-white text-4xl" />
-                                    </motion.div>
-                                )}
-                            </button>
-                        </motion.div>
+                                <button
+                                    onClick={toggleMenu}
+                                    className="z-50 text-white text-3xl"
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                >
+                                    {isMenuOpen ? (
+                                        <></>
+                                    ) : isHovered ? (
+                                        <motion.div
+                                            initial={{ scale: 1 }}
+                                            animate={{ scale: 1.2 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <CgMenuRightAlt className="text-white text-4xl" />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            initial={{ scale: 1.2 }}
+                                            animate={{ scale: 1 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <CgMenuRight className="text-white text-4xl" />
+                                        </motion.div>
+                                    )}
+                                </button>
+                            </motion.div>
                         )
 
                     }
