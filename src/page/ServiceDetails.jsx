@@ -279,7 +279,7 @@ const ServiceDetails = () => {
                         <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto">
                             <div className="text-left font-heebo" data-aos="fade-down">
                                 <h1 className="uppercase font-heebo font-bold text-xl xl:text-2xl text-gray-300">Services</h1>
-                                <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-white">
+                                <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-[#F4C44D]">
                                     {service.title}
                                 </h1>
                                 <p className="text-lg text-white">{service.subtitle}</p>

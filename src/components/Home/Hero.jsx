@@ -82,7 +82,7 @@ const Hero = () => {
                 <div className="text-center md:text-left md:w-full">
                     {/* Animated Headline */}
                     <motion.h1
-                        className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-5xl font-extrabold tracking-tight font-heebo text-[#0C312B] flex flex-wrap justify-center md:justify-start"
+                        className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-5xl font-extrabold tracking-tight font-heebo text-[#F4C44D] flex flex-wrap justify-center md:justify-start"
                         aria-label={headline}
                     >
                         {headline.split("").map((char, index) => (

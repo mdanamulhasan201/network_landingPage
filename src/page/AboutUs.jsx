@@ -47,7 +47,7 @@ const AboutUs = () => {
                     <div className="max-w-screen-xl px-5 sm:px-10 xl:px-5 w-full mx-auto">
                         <div className="text-left font-heebo" data-aos="fade-down">
                             <h1 className="uppercase font-heebo font-bold text-xl xl:text-2xl text-gray-300">About</h1>
-                            <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-white">
+                            <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-[#F4C44D]">
                                 Who We Are
                             </h1>
                             <p className="text-lg text-white max-w-screen-sm">We live for strategy, thrive on data, deliver results, and most importantly, enjoy every moment of the journey.</p>

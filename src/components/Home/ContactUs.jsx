@@ -40,7 +40,7 @@ const ContactUs = () => {
 
                 <Link to='/contact' className="flex justify-center items-center">
                     <motion.button
-                        className="uppercase mt-8 flex items-center bg-yellow-500 text-black px-6 py-3 rounded transform duration-300 shadow-md"
+                        className="uppercase mt-8 flex items-center bg-[#F4C44D] hover:bg-yellow-500 text-black px-6 py-3 rounded transform duration-300 shadow-md"
                         whileHover={{ scale: 1.05 }}
                     >
                         <span>Contact Us</span>
