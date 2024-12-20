@@ -206,7 +206,7 @@ const Navbar = () => {
                     animate={isScrolled ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}>
                     {!isScrolled && (
-                        <Link to="/" className="flex items-center space-x-2">
+                        <Link to="/" className="flex items-center ">
                             <img src={logo} alt="Logo" className="w-40 h-12 md:w-56 md:h-14" />
                         </Link>
                     )}
@@ -264,14 +264,14 @@ const Navbar = () => {
                                 className="fixed top-0 left-0 w-full "
                             >
                                 <div>
-                                    <div className="flex items-center justify-between px-5 py-3">
+                                    <div className="flex items-center justify-between ms-2 mr-3 mt-3">
                                         <motion.div
                                             initial={{ y: -20 }}
                                             animate={{ y: 0 }}
                                             transition={{ duration: 0.5, ease: "easeInOut" }}
                                         >
-                                            <Link to="/" className="flex items-center space-x-2">
-                                                <img src={logos} alt="Logo" className="w-28 h-12 md:w-32 md:h-14" />
+                                            <Link to="/" className="flex items-center">
+                                                <img src={logos} alt="Logo" className="w-20 h-12 md:w-32 md:h-14" />
                                             </Link>
                                         </motion.div>
                                         <div className="hidden md:flex items-center space-x-6 font-heebo text-lg">
@@ -298,7 +298,7 @@ const Navbar = () => {
                                         </div>
 
                                         {/* Always visible on mobile */}
-                                        <div className="md:hidden mr-5">
+                                        <div className="md:hidden">
                                             <button onClick={toggleMenu} className="z-50 text-white text-3xl">
                                                 {isMenuOpen ? (
                                                     <></>
@@ -319,7 +319,7 @@ const Navbar = () => {
 
                 {
                     !isScrolled && (
-                        <div className="md:hidden mr-5">
+                        <div className="md:hidden mr-2">
                             <button onClick={toggleMenu} className="z-50 text-white text-3xl">
                                 {isMenuOpen ? (
                                     <></>

@@ -206,7 +206,7 @@ const Nav = () => {
                     animate={isScrolled ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}>
                     {!isScrolled && (
-                        <Link to="/" className="flex items-center space-x-2">
+                        <Link to="/" className="flex items-center ">
                             <img src={logo} alt="Logo" className="w-40 h-12 md:w-56 md:h-14" />
                         </Link>
                     )}
@@ -217,45 +217,44 @@ const Nav = () => {
                     {
                         !isScrolled && (
                             <motion.div
-                            initial={{ opacity: 1 }}
-                            animate={{ opacity: isScrolled ? 0 : 1 }}
-                            transition={{ duration: 0.3 }}
-                            className="hidden md:block mr-5"
-                        >
-                            <button
-                                onClick={toggleMenu}
-                                className="z-50 text-white text-3xl"
-                                onMouseEnter={() => setIsHovered(true)}
-                                onMouseLeave={() => setIsHovered(false)}
+                                initial={{ opacity: 1 }}
+                                animate={{ opacity: isScrolled ? 0 : 1 }}
+                                transition={{ duration: 0.3 }}
+                                className="hidden md:block mr-5"
                             >
-                                {isMenuOpen ? (
-                                    <></>
-                                ) : isHovered ? (
-                                    <motion.div
-                                        initial={{ scale: 1 }}
-                                        animate={{ scale: 1.2 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <CgMenuRightAlt className="text-white text-4xl" />
-                                    </motion.div>
-                                ) : (
-                                    <motion.div
-                                        initial={{ scale: 1.2 }}
-                                        animate={{ scale: 1 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <CgMenuRight className="text-white text-4xl" />
-                                    </motion.div>
-                                )}
-                            </button>
-                        </motion.div>
+                                <button
+                                    onClick={toggleMenu}
+                                    className="z-50 text-white text-3xl"
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                >
+                                    {isMenuOpen ? (
+                                        <></>
+                                    ) : isHovered ? (
+                                        <motion.div
+                                            initial={{ scale: 1 }}
+                                            animate={{ scale: 1.2 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <CgMenuRightAlt className="text-white text-4xl" />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            initial={{ scale: 1.2 }}
+                                            animate={{ scale: 1 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <CgMenuRight className="text-white text-4xl" />
+                                        </motion.div>
+                                    )}
+                                </button>
+                            </motion.div>
                         )
 
                     }
 
                     {/* The div that shows when scrolling */}
                     {isScrolled && (
-
                         <div>
                             <motion.div
                                 initial={{ opacity: 0 }}
@@ -265,14 +264,14 @@ const Nav = () => {
                                 className="fixed top-0 left-0 w-full "
                             >
                                 <div>
-                                    <div className="flex items-center justify-between px-5 py-3">
+                                    <div className="flex items-center justify-between ms-2 mr-3 mt-3">
                                         <motion.div
                                             initial={{ y: -20 }}
                                             animate={{ y: 0 }}
                                             transition={{ duration: 0.5, ease: "easeInOut" }}
                                         >
-                                            <Link to="/" className="flex items-center space-x-2">
-                                                <img src={logos} alt="Logo" className="w-28 h-12 md:w-36 md:h-14" />
+                                            <Link to="/" className="flex items-center">
+                                                <img src={logos} alt="Logo" className="w-20 h-12 md:w-32 md:h-14" />
                                             </Link>
                                         </motion.div>
                                         <div className="hidden md:flex items-center space-x-6 font-heebo text-lg">
@@ -299,7 +298,7 @@ const Nav = () => {
                                         </div>
 
                                         {/* Always visible on mobile */}
-                                        <div className="md:hidden mr-5">
+                                        <div className="md:hidden">
                                             <button onClick={toggleMenu} className="z-50 text-white text-3xl">
                                                 {isMenuOpen ? (
                                                     <></>
@@ -320,7 +319,7 @@ const Nav = () => {
 
                 {
                     !isScrolled && (
-                        <div className="md:hidden mr-5">
+                        <div className="md:hidden mr-2">
                             <button onClick={toggleMenu} className="z-50 text-white text-3xl">
                                 {isMenuOpen ? (
                                     <></>
