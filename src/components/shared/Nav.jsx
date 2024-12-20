@@ -197,7 +197,7 @@ const Nav = () => {
 
 
     return (
-        <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-50 shadow-md' : 'bg-transparent'}`}>
+        <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-50 shadow-md py-5' : 'bg-transparent'}`}>
             <div className="py-5 flex items-center justify-between">
                 {/* Logo */}
 
@@ -214,89 +214,112 @@ const Nav = () => {
 
                 <div>
                     {/* The motion div that hides on scroll */}
-                    <motion.div
-                        initial={{ opacity: 1 }}
-                        animate={{ opacity: isScrolled ? 0 : 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="hidden md:block mr-5"
+                    {
+                        !isScrolled && (
+                            <motion.div
+                                initial={{ opacity: 1 }}
+                                animate={{ opacity: isScrolled ? 0 : 1 }}
+                                transition={{ duration: 0.3 }}
+                                className="hidden md:block mr-5"
 
-                    >
-                        <button
-                            onClick={toggleMenu}
-                            className="z-50 text-white text-3xl"
-                            onMouseEnter={() => setIsHovered(true)}
-                            onMouseLeave={() => setIsHovered(false)}
-                        >
-                            {isMenuOpen ? (
-                                <></>
-                            ) : isHovered ? (
-                                <CgMenuRightAlt className="text-white text-4xl" />
-                            ) : (
-                                <CgMenuRight className="text-white text-4xl" />
-                            )}
-                        </button>
-                    </motion.div>
+                            >
+                                <button
+                                    onClick={toggleMenu}
+                                    className="z-50 text-white text-3xl"
+                                    onMouseEnter={() => setIsHovered(true)}
+                                    onMouseLeave={() => setIsHovered(false)}
+                                >
+                                    {isMenuOpen ? (
+                                        <></>
+                                    ) : isHovered ? (
+                                        <CgMenuRightAlt className="text-white text-4xl" />
+                                    ) : (
+                                        <CgMenuRight className="text-white text-4xl" />
+                                    )}
+                                </button>
+                            </motion.div>
+                        )
+
+                    }
 
                     {/* The div that shows when scrolling */}
                     {isScrolled && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="fixed top-0 left-0 w-full "
-                        >
-                            <div className="flex items-center justify-between px-5 py-3">
-                                {/* Logo for scrolling state */}
-                                <motion.div
-                                    initial={{ y: -20 }}
-                                    animate={{ y: 0 }}
-                                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                                >
-                                    <Link to="/" className="flex items-center space-x-2">
-                                        <img src={logos} alt="Logo" className="w-28 h-12 md:w-36 md:h-14" />
-                                    </Link>
-                                </motion.div>
 
+                        <div>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="fixed top-0 left-0 w-full "
+                            >
+                                <div>
+                                    <div className="flex items-center justify-between px-5 py-3">
+                                        <motion.div
+                                            initial={{ y: -20 }}
+                                            animate={{ y: 0 }}
+                                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                                        >
+                                            <Link to="/" className="flex items-center space-x-2">
+                                                <img src={logos} alt="Logo" className="w-28 h-12 md:w-36 md:h-14" />
+                                            </Link>
+                                        </motion.div>
+                                        <div className="hidden md:flex items-center space-x-6 font-heebo text-lg">
+                                            <Link
+                                                to="/"
+                                                className={`hover:text-gray-500 transform duration-300 ${getActiveClass("/")}`}
+                                            >
+                                                Home
+                                            </Link>
+                                            <Dropdown items={servicesDropdownItems} dropdownName="services" />
+                                            <Dropdown items={aboutDropdownItems} dropdownName="about" />
+                                            <Link
+                                                to="/contact"
+                                                className={`hover:text-gray-500 transform duration-300 ${getActiveClass("/contact")}`}
+                                            >
+                                                Contact
+                                            </Link>
+                                            <Link
+                                                to="/login"
+                                                className={`px-5 py-1 text-white rounded-full bg-Blue hover:bg-Blue-hover transform duration-300 ${getActiveClass("/login")}`}
+                                            >
+                                                Login
+                                            </Link>
+                                        </div>
 
-                                {/* Navigation Links */}
-                                <div className="hidden md:flex items-center space-x-6 font-heebo text-lg">
-                                    <Link
-                                        to="/"
-                                        className={`hover:text-gray-500 transform duration-300 ${getActiveClass("/")}`}
-                                    >
-                                        Home
-                                    </Link>
-                                    <Dropdown items={servicesDropdownItems} dropdownName="services" />
-                                    <Dropdown items={aboutDropdownItems} dropdownName="about" />
-                                    <Link
-                                        to="/contact"
-                                        className={`hover:text-gray-500 transform duration-300 ${getActiveClass("/contact")}`}
-                                    >
-                                        Contact
-                                    </Link>
-                                    <Link
-                                        to="/login"
-                                        className={`px-5 py-1 text-white rounded-full bg-Blue hover:bg-Blue-hover transform duration-300 ${getActiveClass("/login")}`}
-                                    >
-                                        Login
-                                    </Link>
+                                        {/* Always visible on mobile */}
+                                        <div className="md:hidden mr-5">
+                                            <button onClick={toggleMenu} className="z-50 text-white text-3xl">
+                                                {isMenuOpen ? (
+                                                    <></>
+                                                ) : (
+                                                    <CgMenuRight className={` text-4xl ${isScrolled ? 'text-Blue' : 'bg-transparent'}`} />
+                                                )}
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </motion.div>
+
+                            </motion.div>
+
+                        </div>
+
                     )}
                 </div>
 
-                {/* Always visible on mobile */}
-                <div className="md:hidden mr-5">
-                    <button onClick={toggleMenu} className="z-50 text-white text-3xl">
-                        {isMenuOpen ? (
-                            <></>
-                        ) : (
-                            <CgMenuRight className={` text-4xl ${isScrolled ? 'text-Blue' : 'bg-transparent'}`} />
-                        )}
-                    </button>
-                </div>
+                {
+                    !isScrolled && (
+                        <div className="md:hidden mr-5">
+                            <button onClick={toggleMenu} className="z-50 text-white text-3xl">
+                                {isMenuOpen ? (
+                                    <></>
+                                ) : (
+                                    <CgMenuRight className={` text-4xl ${isScrolled ? 'text-Blue' : 'bg-transparent'}`} />
+                                )}
+                            </button>
+                        </div>
+                    )
+                }
 
                 {/* Sidebar Content */}
                 <AnimatePresence>
