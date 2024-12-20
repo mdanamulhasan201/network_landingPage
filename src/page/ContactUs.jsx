@@ -60,8 +60,8 @@ const ContactUs = () => {
             <Helmet>
                 <title>Cash Media | Contact Us</title>
             </Helmet>
-            <div className=" flex items-center justify-center bg-slate-200 px-5 h-screen">
-                <div className="max-w-screen-xl w-full flex flex-col lg:flex-row gap-10 ">
+            <div className=" flex items-center justify-center bg-slate-200 px-5  ">
+                <div className="max-w-screen-xl w-full flex flex-col lg:flex-row gap-10 py-24 md:py-48 ">
                     {/* Left Side - Contact Info */}
                     <div className="flex flex-col gap-5 justify-center w-full lg:w-1/2" data-aos="zoom-in">
                         <h3 className="font-heebo font-semibold uppercase text-Blue">Contact us</h3>
