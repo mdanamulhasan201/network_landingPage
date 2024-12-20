@@ -3,10 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CgMenuRight, CgMenuRightAlt } from 'react-icons/cg';
 import { AiOutlineClose, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+// import logo from '../../assets/logoWhite.png';
 import logo from '../../assets/logo.png';
 import logos from '../../assets/logos.png';
 
-const ResponsiveNavbar = () => {
+const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const location = useLocation();
@@ -197,7 +198,7 @@ const ResponsiveNavbar = () => {
 
     return (
         <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-slate-50 shadow-md' : 'bg-transparent'}`}>
-            <div className="px-5 md:px-5 2xl:px-20 py-5 flex items-center justify-between">
+            <div className="py-5 flex items-center justify-between">
                 {/* Logo */}
 
                 <motion.div
@@ -217,7 +218,8 @@ const ResponsiveNavbar = () => {
                         initial={{ opacity: 1 }}
                         animate={{ opacity: isScrolled ? 0 : 1 }}
                         transition={{ duration: 0.3 }}
-                        className="hidden md:block"
+                        className="hidden md:block mr-5"
+
                     >
                         <button
                             onClick={toggleMenu}
@@ -244,7 +246,7 @@ const ResponsiveNavbar = () => {
                             transition={{ duration: 0.3 }}
                             className="fixed top-0 left-0 w-full "
                         >
-                            <div className="flex items-center justify-between px-5 2xl:px-20 py-3">
+                            <div className="flex items-center justify-between px-5 py-3">
                                 {/* Logo for scrolling state */}
                                 <motion.div
                                     initial={{ y: -20 }}
@@ -252,7 +254,7 @@ const ResponsiveNavbar = () => {
                                     transition={{ duration: 0.5, ease: "easeInOut" }}
                                 >
                                     <Link to="/" className="flex items-center space-x-2">
-                                        <img src={logos} alt="Logo" className="w-28 h-12 md:w-36 md:h-14"/>
+                                        <img src={logos} alt="Logo" className="w-28 h-12 md:w-36 md:h-14" />
                                     </Link>
                                 </motion.div>
 
@@ -286,12 +288,12 @@ const ResponsiveNavbar = () => {
                 </div>
 
                 {/* Always visible on mobile */}
-                <div className="md:hidden">
+                <div className="md:hidden mr-5">
                     <button onClick={toggleMenu} className="z-50 text-white text-3xl">
                         {isMenuOpen ? (
                             <></>
                         ) : (
-                            <CgMenuRight  className={` text-4xl ${isScrolled ? 'text-Blue' : 'bg-transparent'}`} />
+                            <CgMenuRight className={` text-4xl ${isScrolled ? 'text-Blue' : 'bg-transparent'}`} />
                         )}
                     </button>
                 </div>
@@ -310,12 +312,15 @@ const ResponsiveNavbar = () => {
                             />
 
                             {/* Close Button outside the sidebar */}
-                            <button
+                            <motion.button
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
                                 onClick={toggleMenu}
                                 className="absolute top-6 left-6 z-20 text-white text-3xl"
                             >
                                 <AiOutlineClose />
-                            </button>
+                            </motion.button>
 
                             <motion.div
                                 variants={sidebarVariants}
@@ -385,4 +390,4 @@ const ResponsiveNavbar = () => {
     );
 };
 
-export default ResponsiveNavbar;
+export default Navbar;

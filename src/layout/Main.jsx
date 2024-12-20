@@ -6,7 +6,10 @@ import ContactUs from "../components/Home/ContactUs";
 const Main = () => {
     const location = useLocation();
 
-    const hideNavbarAndFooter = ["/login", "/register", "/about"].includes(location.pathname);
+    // Define paths where Navbar and Footer should be hidden
+    const hideNavbarAndFooter =
+        ["/login", "/register", "/about"].includes(location.pathname) ||
+        /^\/services\/[^/]+$/.test(location.pathname);
 
     return (
         <div className="flex flex-col min-h-screen">

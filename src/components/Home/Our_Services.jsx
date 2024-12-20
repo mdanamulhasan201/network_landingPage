@@ -123,12 +123,12 @@ const Our_Services = () => {
         <div className="bg-slate-50 relative">
             <div className="max-w-screen-xl px-4 py-16 mx-auto ">
                 <h1
-                    className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
+                    className="text-center font-bold font-heebo text-3xl text-titleColor relative"
                     data-aos="fade-down"
                 >
                     Our Services
                     <span
-                        className="block mx-auto mt-2 h-1 w-16 bg-[#000872] rounded-full"
+                        className="block mx-auto mt-2 h-1 w-16 bg-titleColor rounded-full"
                         data-aos="fade-up"
                     ></span>
                 </h1>

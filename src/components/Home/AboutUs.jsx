@@ -25,12 +25,12 @@ const AboutUs = () => {
 
             {/* Title Section */}
             <h1
-                className="text-center font-bold font-heebo text-3xl text-[#000872] relative"
+                className="text-center font-bold font-heebo text-3xl text-titleColor relative"
                 data-aos="fade-down"
             >
                 About Us
                 <span
-                    className="block mx-auto mt-2 h-1 w-16 bg-[#000872] rounded-full"
+                    className="block mx-auto mt-2 h-1 w-16 bg-titleColor rounded-full"
                     data-aos="fade-up"
                 ></span>
             </h1>

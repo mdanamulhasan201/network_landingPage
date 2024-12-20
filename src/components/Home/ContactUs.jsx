@@ -30,7 +30,7 @@ const ContactUs = () => {
             ></div>
 
             {/* Content */}
-            <div className="relative max-w-screen-xl mx-auto px-4 py-40" data-aos="fade-up">
+            <div className="relative max-w-screen-xl mx-auto px-5 py-40" data-aos="fade-up">
                 <h1 className="text-2xl xl:text-4xl font-heebo font-bold text-center">
                     Ready To Talk? Get In Touch!
                 </h1>

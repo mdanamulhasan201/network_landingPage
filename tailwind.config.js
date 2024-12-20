@@ -7,6 +7,7 @@ export default {
       colors: {
         Blue: "#004aad",
         "Blue-hover": "#004badd1",
+        titleColor: "#0C312C",
       },
       fontFamily: {
         heebo: ["Heebo", "Georgia", "serif"],

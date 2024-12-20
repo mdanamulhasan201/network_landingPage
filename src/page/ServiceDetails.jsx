@@ -21,6 +21,9 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
+import Nav from "../components/shared/Nav";
+import ContactUs from "../components/Home/ContactUs";
+import Footer from "../components/shared/Footer";
 
 
 
@@ -253,6 +256,7 @@ const ServiceDetails = () => {
                 <title>Cash Media | {service.title}</title>
                 <meta name="description" content={service.subtitle} />
             </Helmet>
+            <Nav />
 
             <div className="bg-slate-50 ">
                 <div className="relative w-full h-auto">
@@ -294,7 +298,7 @@ const ServiceDetails = () => {
                             <div key={index}>
                                 {/* Description Title */}
                                 {desc.descriptionTitle && (
-                                    <p className="text-2xl font-bold text-[#000872]  mb-5 uppercase text-center">
+                                    <p className="text-2xl font-bold text-titleColor  mb-5 uppercase text-center">
                                         {desc.descriptionTitle}
                                     </p>
                                 )}
@@ -317,7 +321,7 @@ const ServiceDetails = () => {
                                                     {/* Icon */}
                                                     <FaCheckSquare className="text-[#783FC7] text-3xl mb-2" />
                                                     {/* Expertise Text */}
-                                                    <p className="text-center text-[#000872] font-heebo font-semibold">
+                                                    <p className="text-center text-titleColor font-heebo font-semibold">
                                                         {law.trim()}
                                                     </p>
                                                 </motion.div>
@@ -339,7 +343,7 @@ const ServiceDetails = () => {
                                     {sub.map((item, idx) => (
                                         <div key={idx} className="mb-4 ">
 
-                                            {item.title && <p className="text-3xl font-heebo text-center mb-4 font-semibold text-[#000872]">{item.title}</p>}
+                                            {item.title && <p className="text-3xl font-heebo text-center mb-4 font-semibold text-titleColor">{item.title}</p>}
 
                                             {item.subtitle && <p className="text-lg my-5 text-center text-gray-600 font-heebo">{item.subtitle}</p>}
 
@@ -352,7 +356,7 @@ const ServiceDetails = () => {
                                                                 {/* Checkmark Icon */}
                                                                 <FaCheckCircle className="text-[#783FC7] text-xl" />
                                                                 {/* Audience Text */}
-                                                                <span className="text-[#000872] text-xl font-semibold">{aud}</span>
+                                                                <span className="text-titleColor text-xl font-semibold">{aud}</span>
                                                             </div>
                                                         ))
                                                     }
@@ -368,7 +372,7 @@ const ServiceDetails = () => {
 
                                                 <div className="w-full md:w-7/12" data-aos="fade-up">
                                                     <div >
-                                                        {item.titles && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-[#000872]"> {item.titles}</p>}
+                                                        {item.titles && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-titleColor"> {item.titles}</p>}
                                                     </div>
                                                     <div>
                                                         {item.descriptions && <p className="text-lg md:text-xl font-heebo leading-8 text-gray-600"> {item.descriptions}</p>}
@@ -389,7 +393,7 @@ const ServiceDetails = () => {
                                 <div key={index} className="mb-4">
                                     <div className="flex flex-col md:flex-row justify-between items-center gap-10">
                                         <div className="w-full md:w-1/2" data-aos="fade-up">
-                                            {sub.title && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-[#000872]"> {sub.title}</p>}
+                                            {sub.title && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-titleColor"> {sub.title}</p>}
                                             {sub.description && <p className="text-lg md:text-xl font-heebo leading-8 text-gray-600"> {sub.description}</p>}
                                         </div>
 
@@ -412,7 +416,7 @@ const ServiceDetails = () => {
                         <div className="bg-slate-100">
                             <div className=" max-w-screen-xl mx-auto px-5 sm:px-10 xl:px-5">
                                 <div className="flex flex-col items-center justify-center  py-20">
-                                    <h2 className="text-2xl text-center md:text-3xl font-heebo font-semibold mb-10 text-[#000872]">
+                                    <h2 className="text-2xl text-center md:text-3xl font-heebo font-semibold mb-10 text-titleColor">
                                         Our Process
                                     </h2>
                                     <div className="w-full flex justify-center" data-aos="fade-up">
@@ -433,6 +437,9 @@ const ServiceDetails = () => {
                     )
                 }
             </div>
+
+            <ContactUs />
+            <Footer />
         </>
     );
 };
