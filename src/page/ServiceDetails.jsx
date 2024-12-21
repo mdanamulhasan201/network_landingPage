@@ -362,24 +362,30 @@ const ServiceDetails = () => {
                                                     }
                                                 </div>
                                             </div>
-                                            <div className="flex flex-col md:flex-row justify-between items-center gap-10 my-0 md:my-5">
-
+                                            <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-10 my-0 md:my-5">
                                                 <div className="w-full md:w-5/12" data-aos="fade-up">
-                                                    {
-                                                        item.image && <img src={item.image} alt="service" className="w-full " />
-                                                    }
+                                                    {item.image && <img src={item.image} alt="service" className="w-full" />}
                                                 </div>
-
                                                 <div className="w-full md:w-7/12" data-aos="fade-up">
-                                                    <div >
-                                                        {item.titles && <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-titleColor"> {item.titles}</p>}
+                                                    <div>
+                                                        {item.titles && (
+                                                            <p className="text-2xl md:text-3xl font-heebo font-semibold mb-5 text-titleColor">
+                                                                {item.titles}
+                                                            </p>
+                                                        )}
                                                     </div>
                                                     <div>
-                                                        {item.descriptions && <p className="text-lg md:text-xl font-heebo leading-8 text-gray-600"> {item.descriptions}</p>}
+                                                        {item.descriptions && (
+                                                            <p className="text-lg md:text-xl font-heebo leading-8 text-gray-600">
+                                                                {item.descriptions}
+                                                            </p>
+                                                        )}
                                                     </div>
                                                 </div>
 
+
                                             </div>
+
 
 
                                             {item.audiences &&

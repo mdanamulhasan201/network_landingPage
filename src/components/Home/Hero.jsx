@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Star, Target } from "lucide-react";
+// import { Globe, Star, Target } from "lucide-react";
 // import { TiArrowRight } from "react-icons/ti";
 // import { Link } from "react-router-dom";
 import bottomCircle from "../../assets/banner/bottomCircle.png";
@@ -10,11 +10,13 @@ import topDotStyle from "../../assets/banner/topDotStyle.png";
 import rightSidePhn from "../../assets/banner/phoneImg.png";
 import dollarBottom from "../../assets/banner/dollarBottom.png";
 import dollarTop from "../../assets/banner/dollarTop.png";
-
-
+import { Tooltip as ReactTooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css'; // Import styles
+import { FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
-    const headline = "Connecting for Results";
+    const headline = "Performance marketing that delivers the results you define.";
 
     // Animation variants for right side icons
     const iconVariants = {
@@ -77,44 +79,119 @@ const Hero = () => {
 
 
             {/* Centered Content */}
-            <div className="relative py-20 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-10 z-10 px-5 sm:px-10 xl:px-5 max-w-screen-xl mx-auto">
+            <div className="relative py-20 sm:py-32 lg:py-20 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-10 z-10 px-5 sm:px-10 xl:px-5 max-w-screen-xl mx-auto">
                 {/* Left side */}
                 <div className="text-center md:text-left md:w-full">
                     {/* Animated Headline */}
-                    <motion.h1
-                        className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-5xl font-extrabold tracking-tight font-heebo text-[#F4C44D] flex flex-wrap justify-center md:justify-start"
-                        aria-label={headline}
-                    >
-                        {headline.split("").map((char, index) => (
-                            <motion.span
-                                key={index}
-                                className="inline-block"
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                whileHover={{ rotateX: 360 }}
-                                transition={{
-                                    duration: 0.6,
-                                    ease: "easeOut",
-                                    delay: index * 0.1,
-                                }}
-                            >
-                                {char === " " ? "\u00A0" : char}
-                            </motion.span>
-                        ))}
-                    </motion.h1>
 
+
+                    <div>
+                        <motion.h1
+                            className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-[54px] font-extrabold font-heebo text-[#F4C44D] flex flex-wrap justify-center md:justify-start"
+                            aria-label={headline}
+                            id="headline"
+                        >
+                            {headline.split("").map((char, index) => (
+                                <motion.span
+                                    key={index}
+                                    className="inline-block xl:leading-[60px]"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    whileHover={{ rotateX: 360 }}
+                                    transition={{
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                        delay: index * 0.1,
+                                    }}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </motion.span>
+                            ))}
+                        </motion.h1>
+
+                        <ReactTooltip
+                            anchorId="headline"
+                            content="Welcome to MCash Media"
+                            place="top"
+                            isOpen={true}
+                            style={{
+                                backgroundColor: "#4644BC",
+                                color: "#FFFF",
+                                borderRadius: "4px",
+                                padding: "8px",
+                                fontWeight: "bold",
+                            }}
+                        />
+
+                    </div>
                     {/* Subheading */}
-                    <motion.p
-                        className="mt-6 text-lg sm:text-xl  xl:text-2xl text-gray-700 max-w-2xl mx-auto md:mx-0"
+                    <div className="flex flex-col items-center md:items-start mt-10">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.5 }}
+
+                            className="flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-10">
+                            <div className="relative flex items-center overflow-hidden ">
+                                {/* Left Section */}
+                                <div className="flex flex-col bg-transparent px-4 py-2 border-2 border-[#4944BD] rounded-s-full">
+
+                                    <p className="text-sm uppercase font-heebo">Work With Us As An</p>
+                                    <h2 className="text-lg font-bold uppercase font-heebo">Advertiser</h2>
+
+                                </div>
+
+                                {/* Right Section */}
+                                <button className="bg-[#4944BD] text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
+                                    Apply Now
+                                </button>
+                            </div>
+                            <Link to='' className="text-[#4944BD] font-bold text-xl font-heebo hover:underline">
+                                Are you an affiliate?
+                            </Link>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.5 }}
+                            className="flex flex-col lg:flex-row justify-between  gap-10 mt-10">
+                            <div className="flex items-center space-x-3 ">
+                                {/* Icon with background */}
+                                <div className="bg-[#4644BC] p-3 rounded">
+                                    <FaUser className="text-white text-xl" />
+                                </div>
+                                {/* Text */}
+                                <h1 className=" text-lg font-semibold">
+                                    30,000+ <span className="capitalize">Affiliates</span>
+                                </h1>
+                            </div>
+                            <div className="flex items-center space-x-3 ">
+                                {/* Icon with background */}
+                                <div className="bg-[#4644BC] p-3 rounded">
+                                    <FaUser className="text-white text-xl" />
+                                </div>
+                                {/* Text */}
+                                <h1 className=" text-lg font-semibold">
+                                    30,000+ <span className="capitalize"> Active Campaigns</span>
+                                </h1>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* <motion.p
+                        className=" text-lg sm:text-xl  xl:text-2xl text-gray-700 max-w-2xl mx-auto md:mx-0"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.5 }}
                     >
                         Unlocking unlimited potential with data and technology-driven marketing.
-                    </motion.p>
-                    <motion.p
+                    </motion.p> */}
+                    {/* <motion.p
                         className="mt-6 text-xl  text-gray-500 max-w-2xl mx-auto md:mx-0"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -122,9 +199,9 @@ const Hero = () => {
                         transition={{ duration: 1, delay: 0.5 }}
                     >
                         Harness data and technology to optimize strategies, reach the right audience, and drive measurable growth with precision and impact.
-                    </motion.p>
+                    </motion.p> */}
 
-                    <div className="mt-8 flex justify-center md:justify-start space-x-6">
+                    {/* <div className="mt-8 flex justify-center md:justify-start space-x-6">
                         <motion.div
                             custom={0}
                             variants={iconVariants}
@@ -170,7 +247,7 @@ const Hero = () => {
                         >
                             <Star size={40} className="text-purple-600" />
                         </motion.div>
-                    </div>
+                    </div> */}
 
                     {/* <Link to='/contact' className="flex justify-center md:justify-start items-center">
                         <motion.button
