@@ -87,7 +87,7 @@ const Hero = () => {
 
                     <div>
                         <motion.h1
-                            className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-[54px] font-extrabold font-heebo text-[#F4C44D] flex flex-wrap justify-center md:justify-start"
+                            className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-[54px] font-extrabold font-heebo text-[#0B302D] flex flex-wrap justify-center md:justify-start"
                             aria-label={headline}
                             id="headline"
                         >
@@ -132,8 +132,7 @@ const Hero = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.5 }}
-
-                            className="flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-10">
+                            className="flex flex-col lg:flex-row items-center justify-between gap-5 mt-2 lg:gap-10">
                             <div className="relative flex items-center overflow-hidden ">
                                 {/* Left Section */}
                                 <div className="flex flex-col bg-transparent px-4 py-2 border-2 border-[#4944BD] rounded-s-full">
@@ -144,13 +143,28 @@ const Hero = () => {
                                 </div>
 
                                 {/* Right Section */}
-                                <button className="bg-[#4944BD] text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
-                                    Apply Now
+                                <button className="bg-[#4944BD] hover:bg-[#25219a] transform duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
+                                    Apply
                                 </button>
                             </div>
-                            <Link to='' className="text-[#4944BD] font-bold text-xl font-heebo hover:underline">
+                            <div className="relative flex items-center overflow-hidden ">
+
+                                {/* Right Section */}
+                                <button className="bg-[#4944BD] hover:bg-[#25219a] transform duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
+                                    Apply
+                                </button>
+                                {/* Left Section */}
+                                <div className="flex flex-col bg-transparent px-4 py-2 border-2 border-[#4944BD] rounded-r-full">
+
+                                    <p className="text-sm uppercase font-heebo">Work With Us As An</p>
+                                    <h2 className="text-lg font-bold uppercase font-heebo">AFFILIATE</h2>
+
+                                </div>
+
+                            </div>
+                            {/* <Link to='' className="text-[#4944BD] font-bold text-xl font-heebo hover:underline">
                                 Are you an affiliate?
-                            </Link>
+                            </Link> */}
                         </motion.div>
 
                         <motion.div
@@ -158,25 +172,25 @@ const Hero = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.5 }}
-                            className="flex flex-col lg:flex-row justify-between  gap-10 mt-10">
-                            <div className="flex items-center space-x-3 ">
+                            className="flex flex-col lg:flex-row justify-between  gap-10 mt-20">
+                            <div className="flex items-center space-x-3 border p-2 border-[#4644BC]">
                                 {/* Icon with background */}
                                 <div className="bg-[#4644BC] p-3 rounded">
                                     <FaUser className="text-white text-xl" />
                                 </div>
                                 {/* Text */}
-                                <h1 className=" text-lg font-semibold">
-                                    30,000+ <span className="capitalize">Affiliates</span>
+                                <h1 className=" text-xl font-bold">
+                                    30,000+ <span className="capitalize font-semibold">Affiliates</span>
                                 </h1>
                             </div>
-                            <div className="flex items-center space-x-3 ">
+                            <div className="flex items-center space-x-3 border p-2 border-[#4644BC]">
                                 {/* Icon with background */}
                                 <div className="bg-[#4644BC] p-3 rounded">
                                     <FaUser className="text-white text-xl" />
                                 </div>
                                 {/* Text */}
-                                <h1 className=" text-lg font-semibold">
-                                    30,000+ <span className="capitalize"> Active Campaigns</span>
+                                <h1 className=" text-xl font-bold">
+                                    30,000+ <span className="capitalize font-semibold"> Active Campaigns</span>
                                 </h1>
                             </div>
                         </motion.div>
