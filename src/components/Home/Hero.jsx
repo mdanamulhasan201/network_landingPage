@@ -113,7 +113,7 @@ const Hero = () => {
                             ))}
                         </motion.h1>
                         <motion.h1
-                            className="text-[27px] sm:text-4xl md:text-xl lg:text-[26px] xl:text-[35px] font-extrabold font-heebo text-[#0B302D] flex flex-wrap justify-center md:justify-start"
+                            className="text-[27px] sm:text-3xl md:text-lg lg:text-[26px] xl:text-[35px] font-extrabold font-heebo text-[#0B302D] flex flex-wrap justify-center md:justify-start"
                             aria-label={Subheadline}
                             id="headline"
                         >

@@ -77,12 +77,12 @@ const ContactUs = () => {
                                 <h2 className="uppercase font-semibold font-heebo">Contact Us</h2>
                                 <div className="flex items-center">
                                     <FaPhoneAlt className="text-Blue text-xl mr-1" />
-                                    <p className="text-md font-heebo">+880 1234 567 890</p>
+                                    <p className="text-md font-heebo">+1 (315) 694 2852</p>
                                 </div>
                                 <div className="flex items-center">
                                     <MdEmail className="text-Blue text-xl mr-1" />
                                     <p className="text-md font-heebo">
-                                        <a href="mailto:contact@gmail.com">contact@gmail.com</a>
+                                        <a href="mailto:contact@gmail.com">support@mcashmedia.com</a>
                                     </p>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@ const ContactUs = () => {
                                 <h2 className="uppercase font-semibold font-heebo">Mailing Address</h2>
                                 <div className="flex items-start md:items-center">
                                     <FaLocationDot className="text-Blue text-xl" />
-                                    <p className="text-md font-heebo">1234 Street Name, City Name, Dhaka, Bangladesh</p>
+                                    <p className="text-md font-heebo">1900 Olevia St, Jacksonville, FL 32207</p>
                                 </div>
 
                                 {/* Social Icons */}
