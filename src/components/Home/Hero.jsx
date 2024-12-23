@@ -10,10 +10,10 @@ import topDotStyle from "../../assets/banner/topDotStyle.png";
 import rightSidePhn from "../../assets/banner/banner.png";
 import dollarBottom from "../../assets/banner/dollarBottom.png";
 import dollarTop from "../../assets/banner/dollarTop.png";
-import { Tooltip as ReactTooltip } from 'react-tooltip';
-import 'react-tooltip/dist/react-tooltip.css'; // Import styles
+// import { Tooltip as ReactTooltip } from 'react-tooltip';
+// import 'react-tooltip/dist/react-tooltip.css'; 
 import { FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 
 const Hero = () => {
@@ -113,7 +113,7 @@ const Hero = () => {
                             ))}
                         </motion.h1>
                         <motion.h1
-                            className="text-[24px] sm:text-4xl md:text-xl lg:text-[26px] xl:text-[35px] font-extrabold font-heebo text-[#0B302D] flex flex-wrap justify-center md:justify-start"
+                            className="text-[27px] sm:text-4xl md:text-xl lg:text-[26px] xl:text-[35px] font-extrabold font-heebo text-[#0B302D] flex flex-wrap justify-center md:justify-start"
                             aria-label={Subheadline}
                             id="headline"
                         >
