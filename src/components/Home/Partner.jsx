@@ -1,6 +1,11 @@
 import Slider from "react-slick";
 import { motion } from "framer-motion";
-import partner1 from "../../assets/partner1.webp";
+// import partner1 from "../../assets/partner1.webp";
+import partner1 from "../../assets/partner/partner1.png";
+import partner2 from "../../assets/partner/partner2.png";
+import partner3 from "../../assets/partner/partner3.png";
+import partner4 from "../../assets/partner/partner4.png";
+import partner5 from "../../assets/partner/partner5.png";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -21,13 +26,13 @@ const Partner = () => {
 
     const partners = [
         { id: 1, image: partner1, alt: "partner1" },
-        { id: 2, image: partner1, alt: "partner2" },
-        { id: 3, image: partner1, alt: "partner3" },
-        { id: 4, image: partner1, alt: "partner4" },
-        { id: 5, image: partner1, alt: "partner5" },
-        { id: 6, image: partner1, alt: "partner6" },
-        { id: 7, image: partner1, alt: "partner7" },
-        { id: 8, image: partner1, alt: "partner8" },
+        { id: 2, image: partner2, alt: "partner2" },
+        { id: 3, image: partner3, alt: "partner3" },
+        { id: 4, image: partner4, alt: "partner4" },
+        { id: 5, image: partner5, alt: "partner5" },
+        { id: 6, image: partner2, alt: "partner2" },
+        { id: 7, image: partner3, alt: "partner3" },
+        { id: 8, image: partner4, alt: "partner4" },
     ];
 
     const settings = {
@@ -95,7 +100,7 @@ const Partner = () => {
                             <img
                                 src={partner.image}
                                 alt={partner.alt}
-                                className="mx-auto h-20 w-20 object-contain"
+                                className="mx-auto h-32 w-32 object-contain"
                             />
                         </motion.div>
                     ))}

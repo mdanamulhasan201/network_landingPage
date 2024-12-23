@@ -7,16 +7,19 @@ import bottomDot from "../../assets/banner/dotBottom.png";
 import topbigCircl from "../../assets/banner/topbigCircle.png";
 import toptransparentCircle from "../../assets/banner/toptransparentCircle.png";
 import topDotStyle from "../../assets/banner/topDotStyle.png";
-import rightSidePhn from "../../assets/banner/phoneImg.png";
+import rightSidePhn from "../../assets/banner/banner.png";
 import dollarBottom from "../../assets/banner/dollarBottom.png";
 import dollarTop from "../../assets/banner/dollarTop.png";
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css'; // Import styles
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import CountUp from "react-countup";
 
 const Hero = () => {
-    const headline = "Performance marketing that delivers the results you define.";
+    const headline = "Target The World";
+    const Subheadline = "What can smart advertising do for you";
+    // const headline = "Performance marketing that delivers the results you define.";
 
     // Animation variants for right side icons
     const iconVariants = {
@@ -61,7 +64,7 @@ const Hero = () => {
                 <div className="absolute z-20 right-[580px] top-36  xl:right-[640px] 2xl:right-[850px] 2xl:top-36 hidden lg:block">
                     <img src={dollarTop} alt="" className="w-full h-full" />
                 </div>
-                <div className="absolute z-20 right-28 bottom-32 xl:right-36 xl:bottom-30 2xl:right-44 2xl:bottom-40 hidden lg:block">
+                <div className="absolute z-20 right-28 bottom-32 xl:right-36 xl:bottom-30 2xl:right-44 2xl:bottom-32 hidden lg:block">
                     <img src={dollarBottom} alt="" className="w-full h-full" />
                 </div>
 
@@ -79,15 +82,15 @@ const Hero = () => {
 
 
             {/* Centered Content */}
-            <div className="relative py-20 sm:py-32 lg:py-20 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-10 z-10 px-5 sm:px-10 xl:px-5 max-w-screen-xl mx-auto">
+            <div className="relative py-20 sm:py-32 lg:py-20 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-10 z-10 px-5 sm:px-10 xl:px-5 max-w-screen-xl mx-auto ">
                 {/* Left side */}
-                <div className="text-center md:text-left md:w-full">
+                <div className="text-center md:text-left md:w-full mt-20">
                     {/* Animated Headline */}
 
 
                     <div>
                         <motion.h1
-                            className="text-3xl sm:text-4xl md:text-3xl lg:text-[38px] xl:text-[54px] font-extrabold font-heebo text-[#0B302D] flex flex-wrap justify-center md:justify-start"
+                            className="text-[34px] sm:text-4xl md:text-3xl lg:text-[38px] xl:text-[54px] font-extrabold font-heebo text-[#ffab2e] flex flex-wrap justify-center "
                             aria-label={headline}
                             id="headline"
                         >
@@ -109,51 +112,102 @@ const Hero = () => {
                                 </motion.span>
                             ))}
                         </motion.h1>
-
-                        <ReactTooltip
+                        <motion.h1
+                            className="text-[24px] sm:text-4xl md:text-xl lg:text-[26px] xl:text-[35px] font-extrabold font-heebo text-[#0B302D] flex flex-wrap justify-center md:justify-start"
+                            aria-label={Subheadline}
+                            id="headline"
+                        >
+                            {Subheadline.split("").map((char, index) => (
+                                <motion.span
+                                    key={index}
+                                    className="inline-block xl:leading-[60px]"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    whileHover={{ rotateX: 360 }}
+                                    transition={{
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                        delay: index * 0.1,
+                                    }}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </motion.span>
+                            ))}
+                        </motion.h1>
+                        {/* <ReactTooltip
                             anchorId="headline"
-                            content="Welcome to MCash Media"
+                            content="Welcome to McashMedia"
                             place="top"
                             isOpen={true}
                             style={{
-                                backgroundColor: "#4644BC",
+                                backgroundColor: "#0B302C",
                                 color: "#FFFF",
+                                fontSize: "19px",
                                 borderRadius: "4px",
-                                padding: "8px",
+                                padding: "20px",
                                 fontWeight: "bold",
                             }}
-                        />
+                        /> */}
+
 
                     </div>
                     {/* Subheading */}
                     <div className="flex flex-col items-center md:items-start mt-10">
                         <motion.div
+
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.5 }}
-                            className="flex flex-col lg:flex-row items-center justify-between gap-5 mt-2 lg:gap-10">
+                        >
                             <div className="relative flex items-center overflow-hidden ">
                                 {/* Left Section */}
-                                <div className="flex flex-col bg-transparent px-4 py-2 border-2 border-[#4944BD] rounded-s-full">
+                                <div className="flex w-full md:w-[200px] lg:w-[280px] xl:w-[400px] 2xl:w-[400px] items-center flex-col bg-transparent px-4 py-2 border-2 border-[#0C302B] rounded-s-full">
+
+                                    <p className="text-sm uppercase font-heebo">Work With Us As An</p>
+                                    <h2 className="text-lg text-[20px] font-bold uppercase font-heebo">Affiliates</h2>
+
+                                </div>
+
+                                {/* Right Section */}
+                                <button className="bg-[#0C302B] w-[200px]  hover:bg-[#25219a] transform rounded-r-full duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
+                                    Apply
+                                </button>
+                            </div>
+                            <div className="relative flex items-center overflow-hidden mt-10">
+                                {/* Left Section */}
+                                <div className="flex w-full md:w-[200px] lg:w-[280px] xl:w-[400px] 2xl:w-[400px] items-center flex-col bg-transparent px-4 py-2 border-2 border-[#0C302B] rounded-s-full">
+
+                                    <p className="text-sm uppercase font-heebo">Work With Us As An</p>
+                                    <h2 className="text-lg text-[20px] font-bold uppercase font-heebo">Advertiser</h2>
+
+                                </div>
+
+                                {/* Right Section */}
+                                <button className="bg-[#0C302B] w-[200px]  hover:bg-[#25219a] transform rounded-r-full duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
+                                    Apply
+                                </button>
+                            </div>
+                            {/* <div className="relative flex items-center overflow-hidden mt-10 ">
+                             
+                                <button className="bg-[#0C302B] w-[200px]  hover:bg-[#25219a] transform rounded-s-full duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
+                                    Apply
+                                </button>
+                                <div className="flex w-[400px] items-center flex-col bg-transparent px-4 py-2 border-2 border-[#0C302B] rounded-r-full">
 
                                     <p className="text-sm uppercase font-heebo">Work With Us As An</p>
                                     <h2 className="text-lg font-bold uppercase font-heebo">Advertiser</h2>
 
                                 </div>
 
-                                {/* Right Section */}
-                                <button className="bg-[#4944BD] hover:bg-[#25219a] transform duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
-                                    Apply
-                                </button>
-                            </div>
-                            <div className="relative flex items-center overflow-hidden ">
 
-                                {/* Right Section */}
+                            </div> */}
+                            {/* <div className="relative flex items-center overflow-hidden ">
                                 <button className="bg-[#4944BD] hover:bg-[#25219a] transform duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
                                     Apply
                                 </button>
-                                {/* Left Section */}
+
                                 <div className="flex flex-col bg-transparent px-4 py-2 border-2 border-[#4944BD] rounded-r-full">
 
                                     <p className="text-sm uppercase font-heebo">Work With Us As An</p>
@@ -161,10 +215,7 @@ const Hero = () => {
 
                                 </div>
 
-                            </div>
-                            {/* <Link to='' className="text-[#4944BD] font-bold text-xl font-heebo hover:underline">
-                                Are you an affiliate?
-                            </Link> */}
+                            </div> */}
                         </motion.div>
 
                         <motion.div
@@ -172,26 +223,28 @@ const Hero = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: 0.5 }}
-                            className="flex flex-col lg:flex-row justify-between  gap-10 mt-20">
-                            <div className="flex items-center space-x-3 border p-2 border-[#4644BC]">
-                                {/* Icon with background */}
-                                <div className="bg-[#4644BC] p-3 rounded">
+                            className="flex flex-col lg:flex-row justify-between  gap-5 lg:gap-24 mt-12">
+                            <div className="flex items-center space-x-3  p-2 ">
+                                <div className="bg-[#0C302B] p-3 rounded">
                                     <FaUser className="text-white text-xl" />
                                 </div>
-                                {/* Text */}
-                                <h1 className=" text-xl font-bold">
-                                    30,000+ <span className="capitalize font-semibold">Affiliates</span>
+                                <h1 className="text-xl font-bold">
+                                    <CountUp end={15000} duration={2.5} separator="," />+
+                                    <span className="capitalize font-semibold"> Affiliates</span>
                                 </h1>
                             </div>
-                            <div className="flex items-center space-x-3 border p-2 border-[#4644BC]">
-                                {/* Icon with background */}
-                                <div className="bg-[#4644BC] p-3 rounded">
+                            <div className="flex items-center space-x-3  p-2 ">
+
+                                <div className="bg-[#0C302B] p-3 rounded">
                                     <FaUser className="text-white text-xl" />
                                 </div>
-                                {/* Text */}
-                                <h1 className=" text-xl font-bold">
-                                    30,000+ <span className="capitalize font-semibold"> Active Campaigns</span>
+                                <h1 className="text-xl font-bold">
+                                    <CountUp end={10000} duration={2.5} separator="," />+
+                                    <span className="capitalize font-semibold">  Campaigns</span>
                                 </h1>
+                                {/* <h1 className=" text-xl font-bold">
+                                    10,000+ <span className="capitalize font-semibold"> Active </span>
+                                </h1> */}
                             </div>
                         </motion.div>
                     </div>

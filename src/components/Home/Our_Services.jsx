@@ -153,7 +153,7 @@ const Our_Services = () => {
                                 data-aos="zoom-in"
                             >
                                 <motion.div
-                                    className="text-Blue flex items-center justify-center"
+                                    className="text-[#0B302C] flex items-center justify-center"
                                     whileHover={{
                                         rotate: [0, 15, -15, 0],
                                         transition: { type: "spring", duration: 0.5 },
