@@ -9,6 +9,11 @@ import { Helmet } from 'react-helmet-async';
 import { FaSmile, FaUsers, FaLightbulb, FaHandsHelping, FaHandshake, FaPaintBrush } from "react-icons/fa";
 
 const AboutUs = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -24,7 +29,7 @@ const AboutUs = () => {
     return (
         <>
             <Helmet>
-                <title>Cash Media | About Us</title>
+                <title>Mcashmedia Transforming Ideas into Revenue!</title>
             </Helmet>
             <Nav />
             <div className="relative w-full h-auto">

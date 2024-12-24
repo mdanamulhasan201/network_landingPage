@@ -1,12 +1,18 @@
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../assets/ourTeam/teambanner.jpg"
+import { useEffect } from "react";
 
 
 const TeamMembers = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div >
             <Helmet>
-                <title>Cash Media | Our Team</title>
+                <title>Mcashmedia Transforming Ideas into Revenue!</title>
             </Helmet>
 
             <div className="relative w-full h-auto">

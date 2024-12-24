@@ -6,12 +6,18 @@ import ExtraCare from '../components/Home/ExtraCare';
 import Our_Services from '../components/Home/Our_Services';
 import Partner from '../components/Home/Partner';
 import Hero from '../components/Home/Hero';
+import { useEffect } from 'react';
 
 const Home = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <>
             <Helmet>
-                <title>Cash Media | Home</title>
+                <title>Mcashmedia Transforming Ideas into Revenue!</title>
             </Helmet>
             {/* <Banner /> */}
             <Hero/>

@@ -13,6 +13,11 @@ import { Helmet } from 'react-helmet-async';
 const ContactUs = () => {
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+
+    useEffect(() => {
         AOS.init({
             duration: 1000,
             once: false,
@@ -58,7 +63,7 @@ const ContactUs = () => {
     return (
         <>
             <Helmet>
-                <title>Cash Media | Contact Us</title>
+                <title>Mcashmedia Transforming Ideas into Revenue!</title>
             </Helmet>
             <div className=" flex items-center justify-center bg-slate-200 px-5  ">
                 <div className="max-w-screen-xl w-full flex flex-col lg:flex-row gap-10 py-24 md:py-48 ">

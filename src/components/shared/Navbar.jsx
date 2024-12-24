@@ -290,7 +290,7 @@ const Navbar = () => {
                                                 Contact
                                             </Link>
                                             <Link
-                                                to="/login"
+                                                to="/#"
                                                 className={`px-5 py-1 text-white rounded-full bg-Blue hover:bg-Blue-hover transform duration-300 ${getActiveClass("/login")}`}
                                             >
                                                 Login
@@ -404,7 +404,7 @@ const Navbar = () => {
 
                                         <motion.div variants={linkVariants}>
                                             <Link
-                                                to="/login"
+                                                to="/#"
                                                 className="block bg-Blue text-white px-6 py-3 rounded hover:bg-Blue-hover transform duration-300"
                                                 onClick={toggleMenu}
                                             >

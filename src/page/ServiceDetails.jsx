@@ -28,6 +28,11 @@ import Footer from "../components/shared/Footer";
 
 
 const ServiceDetails = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const { slug } = useParams();
     useEffect(() => {
         AOS.init({
@@ -234,7 +239,7 @@ const ServiceDetails = () => {
         return (
             <div>
                 <Helmet>
-                    <title>Cash Media | Service Not Found</title>
+                    <title>Mcashmedia Transforming Ideas into Revenue!</title>
                 </Helmet>
                 <h1>Service not found</h1>
             </div>
@@ -253,7 +258,7 @@ const ServiceDetails = () => {
     return (
         <>
             <Helmet>
-                <title>Cash Media | {service.title}</title>
+                <title>Mcashmedia Transforming Ideas into Revenue!</title>
                 <meta name="description" content={service.subtitle} />
             </Helmet>
             <Nav />

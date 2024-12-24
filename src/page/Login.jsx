@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -9,6 +9,12 @@ import { Link } from 'react-router-dom';
 import { TiArrowRight } from 'react-icons/ti';
 
 const LoginPage = () => {
+    
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
