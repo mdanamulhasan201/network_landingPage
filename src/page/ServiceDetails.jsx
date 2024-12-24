@@ -34,6 +34,11 @@ const ServiceDetails = () => {
     }, []);
 
     const { slug } = useParams();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [slug]);
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
