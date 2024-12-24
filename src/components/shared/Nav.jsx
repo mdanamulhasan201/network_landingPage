@@ -47,7 +47,7 @@ const Nav = () => {
     const aboutDropdownItems = [
         { label: 'About Us', path: '/about' },
         { label: 'Our Team', path: '/team' },
-        { label: 'Careers', path: '/careers' }
+        // { label: 'Careers', path: '/careers' }
     ];
 
     // Dropdown Animations
