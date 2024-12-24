@@ -8,8 +8,10 @@ const Main = () => {
 
     // Define paths where Navbar and Footer should be hidden
     const hideNavbarAndFooter =
-        ["/login", "/register", "/about"].includes(location.pathname) ||
+        ["/login", "/register", "/about", "/team"].includes(location.pathname) ||
         /^\/services\/[^/]+$/.test(location.pathname);
+    
+        const hideContactUs = ["/contact"].includes(location.pathname) || /^\/services\/[^/]+$/.test(location.pathname);
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -20,7 +22,7 @@ const Main = () => {
             </div>
             {!hideNavbarAndFooter &&
                 <div>
-                    <ContactUs />
+                    {!hideContactUs && <ContactUs />}
                     <Footer />
                 </div>
             }

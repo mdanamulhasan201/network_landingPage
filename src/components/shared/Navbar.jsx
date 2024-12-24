@@ -136,6 +136,8 @@ const Navbar = () => {
         return location.pathname === path ? 'text-Blue font-bold' : '';
     };
 
+    const hideContactUs = ["/contact"].includes(location.pathname) || /^\/services\/[^/]+$/.test(location.pathname);
+
     // Dropdown Component
     const Dropdown = ({
         items,
@@ -236,7 +238,7 @@ const Navbar = () => {
                                             animate={{ scale: 1.2 }}
                                             transition={{ duration: 0.2 }}
                                         >
-                                            <CgMenuRightAlt className="text-white text-4xl" />
+                                            <CgMenuRightAlt className={`${ hideContactUs ? 'text-Blue' : 'text-white'} text-4xl`} />
                                         </motion.div>
                                     ) : (
                                         <motion.div
@@ -244,7 +246,7 @@ const Navbar = () => {
                                             animate={{ scale: 1 }}
                                             transition={{ duration: 0.2 }}
                                         >
-                                            <CgMenuRight className="text-white text-4xl" />
+                                            <CgMenuRight className={`${ hideContactUs ? 'text-Blue' : 'text-white'} text-4xl`} />
                                         </motion.div>
                                     )}
                                 </button>

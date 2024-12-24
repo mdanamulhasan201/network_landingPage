@@ -1,6 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../assets/ourTeam/teambanner.jpg"
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Nav from "../components/shared/Nav";
 
 
 const TeamMembers = () => {
@@ -9,11 +12,25 @@ const TeamMembers = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120,
+            debug: true,
+        });
+        return () => {
+            AOS.refresh();
+        };
+    }, []);
+
     return (
         <div >
             <Helmet>
                 <title>Mcashmedia Transforming Ideas into Revenue!</title>
             </Helmet>
+            <Nav />
 
             <div className="relative w-full h-auto">
                 {/* Background Color with Angled Division */}
