@@ -77,57 +77,44 @@ const Partner = () => {
     return (
 
         <div className="max-w-screen-xl mx-auto px-8 py-16 ">
-            <h1
-                className="text-center font-bold font-heebo text-3xl text-titleColor relative"
-                data-aos="fade-down"
-            >
-                Our Partners
-                <span
-                    className="block mx-auto mt-2 h-1 w-16 bg-titleColor rounded-full"
-                    data-aos="fade-up"
-                ></span>
-            </h1>
-            <div className="max-w-screen-xl mx-auto px-8 py-16 ">
-                <h1
-                    className="text-center font-bold font-heebo text-3xl text-titleColor relative"
-                    data-aos="fade-down"
-                >
-                    Our Partners
-                    <span
-                        className="block mx-auto mt-2 h-1 w-16 bg-titleColor rounded-full"
-                        data-aos="fade-up"
-                    ></span>
-                </h1>
-                <div className="mt-8" data-aos="fade-up">
-                    <Slider {...settings}>
-                        {partners.map((partner) => (
-                            <motion.div
-                                key={partner.id}
-                                variants={fadeVariants}
-                                initial="initial"
-                                animate="animate"
-                                exit="exit"
-                                className="p-4"
-                            >
-                                <a
-                                    href={partner.url || "#"}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block"
-                                >
-                                    <img
-                                        src={partner.image}
-                                        alt={partner.alt}
-                                        className="mx-auto h-32 w-32 object-contain"
-                                    />
-                                </a>
-                            </motion.div>
-                        ))}
-                    </Slider>
-                </div>
-            </div>
-
+        <h1
+            className="text-center font-bold font-heebo text-3xl text-titleColor relative"
+            data-aos="fade-down"
+        >
+            Our Partners
+            <span
+                className="block mx-auto mt-2 h-1 w-16 bg-titleColor rounded-full"
+                data-aos="fade-up"
+            ></span>
+        </h1>
+        <div className="mt-8" data-aos="fade-up">
+            <Slider {...settings}>
+                {partners.map((partner) => (
+                    <motion.div
+                        key={partner.id}
+                        variants={fadeVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        className="p-4"
+                    >
+                        <a
+                            href={partner.url || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block"
+                        >
+                            <img
+                                src={partner.image}
+                                alt={partner.alt}
+                                className="mx-auto h-32 w-32 object-contain"
+                            />
+                        </a>
+                    </motion.div>
+                ))}
+            </Slider>
         </div>
+    </div>
 
     );
 };
