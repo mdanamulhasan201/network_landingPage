@@ -6,14 +6,25 @@ import { IoClose } from "react-icons/io5";
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
     const handleModalOpen = () => {
         setIsModalOpen(true);
+        isTermsModalOpen(true);
     };
 
     const handleModalClose = () => {
         setIsModalOpen(false);
+        setIsTermsModalOpen(false);
     };
+    const handleTermsModalOpen = () => {
+        setIsTermsModalOpen(true);
+    };
+
+    // const handleTermsModalClose = () => {
+    //     setIsModalOpen(false);
+    //     setIsTermsModalOpen(false);
+    // };
 
     return (
         <div className="py-5 bg-[#004AAD] border-t border-gray-500  flex flex-col md:flex-row gap-2 justify-between items-center px-5">
@@ -29,9 +40,12 @@ const Footer = () => {
                     </button>
                 </li>
                 <li>
-                    <Link to="/" className="hover:underline hover:text-white transform duration-300">
+                    <button
+                        onClick={handleTermsModalOpen}
+                        className="hover:underline hover:text-white transform duration-300"
+                    >
                         Terms of Use
-                    </Link>
+                    </button>
                 </li>
             </ul>
 
@@ -138,6 +152,51 @@ const Footer = () => {
                                     <p className="font-heebo text-md">privacy@mcashmedia.com</p>
                                     <p className="font-heebo text-md">+1-315-694-2852</p>
                                 </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
+
+            {/* Terms Modal */}
+            <AnimatePresence>
+                {isTermsModalOpen && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            transition={{ duration: 0.5, ease: "easeInOut" }}
+                            className="bg-white rounded-lg max-w-xl w-full max-h-[90vh] overflow-y-auto flex flex-col"
+                        >
+                            {/* Sticky Header */}
+                            <div className="sticky top-0 bg-white z-10 flex justify-between items-center border-b p-4">
+                                <h2 className="text-xl text-black font-heebo font-bold">Terms of Use</h2>
+                                <button
+                                    onClick={handleModalClose}
+                                    className="px-4 py-2 bg-[#004AAD] text-white rounded hover:bg-[#003580] transform duration-300"
+                                >
+                                    <IoClose />
+                                </button>
+                            </div>
+
+                            {/* Scrollable Content */}
+                            <div className="p-4 space-y-4 text-gray-600 font-heebo">
+                                <p className="font-heebo text-md">
+                                    By accessing this website we assume you accept these terms and conditions. Do not continue to use Mcashmedia if you do not agree to take all of the terms and conditions stated on this page.
+                                </p>
+                                <p className="font-semibold text-md">Cookies</p>
+                                <p className="font-heebo text-md">
+                                    We employ the use of cookies. By accessing Mcashmedia, you agreed to use cookies in agreement with the Mcashmedia's Privacy Policy.
+                                </p>
+                                <p className="font-heebo text-md">
+                                    Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
+                                </p>
+                                <p className="font-semibold text-md">License</p>
+                                <p className="font-heebo text-md">
+                                    Unless otherwise stated, Mcashmedia and/or its licensors own the intellectual property rights for all material on Mcashmedia. All intellectual property rights are reserved. You may access this from Mcashmedia for your own personal use subjected to restrictions set in these terms and conditions.
+                                </p>
+
                             </div>
                         </motion.div>
                     </div>
