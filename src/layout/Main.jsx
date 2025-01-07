@@ -8,7 +8,7 @@ const Main = () => {
 
     // Define paths where Navbar and Footer should be hidden
     const hideNavbarAndFooter =
-        ["/login", "/register", "/about"].includes(location.pathname) ||
+        ["/login", "/register", "/about", "/team"].includes(location.pathname) ||
         /^\/services\/[^/]+$/.test(location.pathname);
 
     return (

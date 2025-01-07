@@ -47,7 +47,7 @@ const Navbar = () => {
     const aboutDropdownItems = [
         { label: 'About Us', path: '/about' },
         { label: 'Our Team', path: '/team' },
-        { label: 'Careers', path: '/careers' }
+        // { label: 'Careers', path: '/careers' }
     ];
 
     // Dropdown Animations
@@ -202,6 +202,7 @@ const Navbar = () => {
                 {/* Logo */}
 
                 <motion.div
+                className='ms-3'
                     initial={{ opacity: 1, y: 0 }}
                     animate={isScrolled ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}>
@@ -290,8 +291,8 @@ const Navbar = () => {
                                                 Contact
                                             </Link>
                                             <Link
-                                                to="/login"
-                                                className={`px-5 py-1 text-white rounded-full bg-Blue hover:bg-Blue-hover transform duration-300 ${getActiveClass("/login")}`}
+                                                // to="/login"
+                                                className={`px-5 py-1 text-white rounded-full bg-[#113706] hover:bg-[#5742BF] transform duration-300 ${getActiveClass("/login")}`}
                                             >
                                                 Login
                                             </Link>
@@ -404,8 +405,8 @@ const Navbar = () => {
 
                                         <motion.div variants={linkVariants}>
                                             <Link
-                                                to="/login"
-                                                className="block bg-Blue text-white px-6 py-3 rounded hover:bg-Blue-hover transform duration-300"
+                                                // to="/login"
+                                                className="block bg-[#113706] hover:bg-[#5742BF] text-white px-6 py-3 rounded transform duration-300"
                                                 onClick={toggleMenu}
                                             >
                                                 Login

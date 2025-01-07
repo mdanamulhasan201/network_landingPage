@@ -53,7 +53,7 @@ const ServiceDetails = () => {
             subContent: [
                 {
                     title: "In the digital era, data is a powerful asset.",
-                    description: "As data flows through our system in real-time, we add extra information to each record, making it more valuable to you. Our services are fully customized to meet the needs of each client. Our experts analyze the data thoroughly to deliver the best results. Everyone has data, but Diablo helps you understand it. We improve your data and help you make money from it using multi-channel marketing solutions.",
+                    description: "As data flows through our system in real-time, we add extra information to each record, making it more valuable to you. Our services are fully customized to meet the needs of each client. Our experts analyze the data thoroughly to deliver the best results. Everyone has data, but AffClickZen helps you understand it. We improve your data and help you make money from it using multi-channel marketing solutions.",
                     image: digitalworld,
                 },
                 [
@@ -103,7 +103,7 @@ const ServiceDetails = () => {
                 [
                     {
                         titles: "Here's how we bring it to life.",
-                        descriptions: "We take a strategic approach to affiliate marketing, helping you reach new customers while boosting your brand's credibility. Our team of experts manages all aspects of your affiliate program, offering best practices, valuable insights, and expanding your audience reach. From tracking click-to-conversion metrics and optimizing landing pages to providing creative recommendations, growth strategies, and ensuring affiliates are paid promptly, MCash Media takes care of the daily management of your affiliate program. Over the years, we’ve built strong, trusted relationships with our network partners, minimizing fraud and lowering customer acquisition costs through streamlined processes. These efficiencies are the foundation of our long-lasting partnerships that stand the test of time.",
+                        descriptions: "We take a strategic approach to affiliate marketing, helping you reach new customers while boosting your brand's credibility. Our team of experts manages all aspects of your affiliate program, offering best practices, valuable insights, and expanding your audience reach. From tracking click-to-conversion metrics and optimizing landing pages to providing creative recommendations, growth strategies, and ensuring affiliates are paid promptly, AffClickZen takes care of the daily management of your affiliate program. Over the years, we’ve built strong, trusted relationships with our network partners, minimizing fraud and lowering customer acquisition costs through streamlined processes. These efficiencies are the foundation of our long-lasting partnerships that stand the test of time.",
                         image: AffiliateMarketing,
                     },
                 ],
@@ -170,7 +170,7 @@ const ServiceDetails = () => {
                 [
                     {
                         titles: "Clicks and impressions are valuable, but qualified leads are what truly matter.",
-                        descriptions: "Targeted lead generation campaigns are crucial for business growth, but executing them effectively requires expertise. What sets Diablo apart is our understanding that not everyone is a lead. Many businesses make the mistake of casting a wide net, but we focus on reaching only those genuinely interested in your offering. As a performance agency, we bridge the gap between these leads and your business by auditing, identifying the ideal audience, and using the best technologies to capture them.",
+                        descriptions: "Targeted lead generation campaigns are crucial for business growth, but executing them effectively requires expertise. What sets AffClickZen apart is our understanding that not everyone is a lead. Many businesses make the mistake of casting a wide net, but we focus on reaching only those genuinely interested in your offering. As a performance agency, we bridge the gap between these leads and your business by auditing, identifying the ideal audience, and using the best technologies to capture them.",
                         image: qualityImg,
                     },
                 ],
@@ -234,7 +234,7 @@ const ServiceDetails = () => {
         return (
             <div>
                 <Helmet>
-                    <title>Cash Media | Service Not Found</title>
+                    <title>AffClickZen | Service Not Found</title>
                 </Helmet>
                 <h1>Service not found</h1>
             </div>
@@ -253,7 +253,7 @@ const ServiceDetails = () => {
     return (
         <>
             <Helmet>
-                <title>Cash Media | {service.title}</title>
+                <title>AffClickZen | {service.title}</title>
                 <meta name="description" content={service.subtitle} />
             </Helmet>
             <Nav />

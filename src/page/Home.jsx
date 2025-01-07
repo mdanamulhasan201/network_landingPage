@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <>
             <Helmet>
-                <title>Cash Media | Home</title>
+                <title>AffClickZen | Home</title>
             </Helmet>
             {/* <Banner /> */}
             <Hero/>

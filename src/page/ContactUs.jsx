@@ -58,7 +58,7 @@ const ContactUs = () => {
     return (
         <>
             <Helmet>
-                <title>Cash Media | Contact Us</title>
+                <title>AffClickZen| Contact Us</title>
             </Helmet>
             <div className=" flex items-center justify-center bg-slate-200 px-5  ">
                 <div className="max-w-screen-xl w-full flex flex-col lg:flex-row gap-10 py-24 md:py-48 ">

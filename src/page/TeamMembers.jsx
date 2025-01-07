@@ -1,14 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../assets/ourTeam/teambanner.jpg"
+import Nav from "../components/shared/Nav";
 
 
 const TeamMembers = () => {
     return (
         <div >
             <Helmet>
-                <title>Cash Media | Our Team</title>
+                <title>AffClickZen | Our Team</title>
             </Helmet>
-
+            <Nav />
             <div className="relative w-full h-auto">
                 {/* Background Color with Angled Division */}
                 <div
@@ -30,7 +31,7 @@ const TeamMembers = () => {
                         <div className="text-left font-heebo" data-aos="fade-down">
                             <h1 className="uppercase font-heebo font-bold text-xl xl:text-2xl text-gray-300">Our Team</h1>
                             <h1 className="text-4xl md:text-5xl xl:text-6xl mb-4 mt-1 font-semibold text-[#F4C44D]">
-                                Meet McashMedia
+                                Meet AffClickZen
                             </h1>
                             <p className="text-lg lg:w-96 text-white">Clients trust us and stay for the relationships we build.</p>
                         </div>
@@ -42,14 +43,14 @@ const TeamMembers = () => {
                     {/* Left Side */}
                     <div className="w-full md:w-5/12">
                         <p className="text-lg md:text-xl font-heebo leading-8 text-gray-600">
-                            At Mcashmedia, we are a dynamic collective of affiliate marketing experts dedicated
+                            At AffClickZen, we are a dynamic collective of affiliate marketing experts dedicated
                             to revolutionizing performance marketing. Our team thrives on creativity,
                             innovation, and a results-driven approach to connecting brands with their ideal audiences.
                             <br />
                             <br />
                             With extensive expertise in social, native, email, and SMS traffic, we pride ourselves on
                             delivering high-quality leads and crafting tailored campaigns that exceed expectations.
-                            Mcashmedia is more than a marketing company—it’s a partnership built on trust, precision,
+                            AffClickZen is more than a marketing company—it’s a partnership built on trust, precision,
                             and a shared vision for success.
                         </p>
                     </div>

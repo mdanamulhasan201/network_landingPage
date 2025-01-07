@@ -24,7 +24,7 @@ const AboutUs = () => {
     return (
         <>
             <Helmet>
-                <title>Cash Media | About Us</title>
+                <title>AffClickZen | About Us</title>
             </Helmet>
             <Nav />
             <div className="relative w-full h-auto">
