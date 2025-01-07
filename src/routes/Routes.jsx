@@ -38,10 +38,10 @@ export const router = createBrowserRouter([
                 path: "team",
                 element: <TeamMembers />
             },
-            {
-                path: "careers",
-                element: <Career />
-            },
+            // {
+            //     path: "careers",
+            //     element: <Career />
+            // },
             {
                 path: "login",
                 element: <Login />

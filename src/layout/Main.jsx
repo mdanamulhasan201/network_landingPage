@@ -10,6 +10,8 @@ const Main = () => {
     const hideNavbarAndFooter =
         ["/login", "/register", "/about", "/team"].includes(location.pathname) ||
         /^\/services\/[^/]+$/.test(location.pathname);
+    
+        const hideContactUs = ["/contact"].includes(location.pathname) || /^\/services\/[^/]+$/.test(location.pathname);
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -20,7 +22,7 @@ const Main = () => {
             </div>
             {!hideNavbarAndFooter &&
                 <div>
-                    <ContactUs />
+                    {!hideContactUs && <ContactUs />}
                     <Footer />
                 </div>
             }
