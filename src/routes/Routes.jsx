@@ -8,7 +8,7 @@ import ServiceDetails from "../page/ServiceDetails";
 import Login from "../page/Login";
 import Register from "../page/Register";
 import TeamMembers from "../page/TeamMembers";
-import Career from "../page/Career";
+// import Career from "../page/Career";
 import AboutUs from "../page/AboutUs";
 
 

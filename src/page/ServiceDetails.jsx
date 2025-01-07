@@ -244,11 +244,11 @@ const ServiceDetails = () => {
         return (
             <div>
                 <Helmet>
-<<<<<<< HEAD
+
                     <title>AffClickZen | Service Not Found</title>
-=======
+
                     <title>Mcashmedia Transforming Ideas into Revenue!</title>
->>>>>>> 55fc0e98de68b21c89d7b3b97568970c1cd75032
+
                 </Helmet>
                 <h1>Service not found</h1>
             </div>
@@ -267,11 +267,8 @@ const ServiceDetails = () => {
     return (
         <>
             <Helmet>
-<<<<<<< HEAD
                 <title>AffClickZen | {service.title}</title>
-=======
-                <title>Mcashmedia Transforming Ideas into Revenue!</title>
->>>>>>> 55fc0e98de68b21c89d7b3b97568970c1cd75032
+
                 <meta name="description" content={service.subtitle} />
             </Helmet>
             <Nav />

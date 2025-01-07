@@ -292,13 +292,8 @@ const Nav = () => {
                                                 Contact
                                             </Link>
                                             <Link
-<<<<<<< HEAD
                                                 // to="/login"
                                                 className={`px-5 py-1 text-white rounded-full bg-[#113706] hover:bg-[#5742BF] transform duration-300 ${getActiveClass("/login")}`}
-=======
-                                                to="/#"
-                                                className={`px-5 py-1 text-white rounded-full bg-Blue hover:bg-Blue-hover transform duration-300 ${getActiveClass("/login")}`}
->>>>>>> 55fc0e98de68b21c89d7b3b97568970c1cd75032
                                             >
                                                 Login
                                             </Link>
@@ -411,13 +406,8 @@ const Nav = () => {
 
                                         <motion.div variants={linkVariants}>
                                             <Link
-<<<<<<< HEAD
                                                 // to="/login"
                                                 className="block bg-[#113706] hover:bg-[#5742BF] text-white px-6 py-3 rounded  transform duration-300"
-=======
-                                                to="/#"
-                                                className="block bg-Blue text-white px-6 py-3 rounded hover:bg-Blue-hover transform duration-300"
->>>>>>> 55fc0e98de68b21c89d7b3b97568970c1cd75032
                                                 onClick={toggleMenu}
                                             >
                                                 Login

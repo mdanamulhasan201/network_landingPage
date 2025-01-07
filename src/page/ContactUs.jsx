@@ -63,11 +63,7 @@ const ContactUs = () => {
     return (
         <>
             <Helmet>
-<<<<<<< HEAD
                 <title>AffClickZen| Contact Us</title>
-=======
-                <title>Mcashmedia Transforming Ideas into Revenue!</title>
->>>>>>> 55fc0e98de68b21c89d7b3b97568970c1cd75032
             </Helmet>
             <div className=" flex items-center justify-center bg-slate-200 px-5  ">
                 <div className="max-w-screen-xl w-full flex flex-col lg:flex-row gap-10 py-24 md:py-48 ">

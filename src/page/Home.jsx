@@ -17,11 +17,7 @@ const Home = () => {
     return (
         <>
             <Helmet>
-<<<<<<< HEAD
                 <title>AffClickZen | Home</title>
-=======
-                <title>Mcashmedia Transforming Ideas into Revenue!</title>
->>>>>>> 55fc0e98de68b21c89d7b3b97568970c1cd75032
             </Helmet>
             {/* <Banner /> */}
             <Hero/>

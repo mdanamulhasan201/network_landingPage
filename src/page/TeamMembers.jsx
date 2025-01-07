@@ -1,46 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import bannerImg from "../assets/ourTeam/teambanner.jpg"
-<<<<<<< HEAD
-=======
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
->>>>>>> 55fc0e98de68b21c89d7b3b97568970c1cd75032
 import Nav from "../components/shared/Nav";
 
 
 const TeamMembers = () => {
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true,
-            offset: 120,
-            debug: true,
-        });
-        return () => {
-            AOS.refresh();
-        };
-    }, []);
-
     return (
         <div >
             <Helmet>
-<<<<<<< HEAD
                 <title>AffClickZen | Our Team</title>
             </Helmet>
             <Nav />
-=======
-                <title>Mcashmedia Transforming Ideas into Revenue!</title>
-            </Helmet>
-            <Nav />
-
->>>>>>> 55fc0e98de68b21c89d7b3b97568970c1cd75032
             <div className="relative w-full h-auto">
                 {/* Background Color with Angled Division */}
                 <div
