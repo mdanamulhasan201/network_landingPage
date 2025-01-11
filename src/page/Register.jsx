@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 import 'react-toastify/dist/ReactToastify.css';
-import logo from '../assets/logoo.png';
+// import logo from '../assets/logoo.png';
 import { Link } from 'react-router-dom';
 import { TiArrowRight } from 'react-icons/ti';
 
@@ -66,7 +66,7 @@ const Register = () => {
             >
                 <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg">
                     <div className="text-center mb-6">
-                        <img src={logo} alt="M Cash Media" className="w-28 sm:w-32 h-auto mx-auto" />
+                        {/* <img src={logo} alt="M Cash Media" className="w-28 sm:w-32 h-auto mx-auto" /> */}
                         <p className="text-[#0148AC] mt-5 font-heebo font-bold text-xl sm:text-2xl">
                             Create Your Account
                         </p>
