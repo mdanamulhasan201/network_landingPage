@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <>
             <Helmet>
-                <title>AffClickZen | Home</title>
+                <title>Affclickzen Transforming Ideas into Revenue!</title>
             </Helmet>
             {/* <Banner /> */}
             <Hero/>

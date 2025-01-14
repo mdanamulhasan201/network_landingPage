@@ -80,14 +80,14 @@ const ContactUs = () => {
                             {/* Contact Details */}
                             <div className="flex flex-col gap-2">
                                 <h2 className="uppercase font-semibold font-heebo">Contact Us</h2>
-                                <div className="flex items-center">
+                                {/* <div className="flex items-center">
                                     <FaPhoneAlt className="text-Blue text-xl mr-1" />
                                     <p className="text-md font-heebo">+1 (315) 694 2852</p>
-                                </div>
+                                </div> */}
                                 <div className="flex items-center">
                                     <MdEmail className="text-Blue text-xl mr-1" />
                                     <p className="text-md font-heebo">
-                                        <a href="mailto:contact@gmail.com">support@mcashmedia.com</a>
+                                        <a href="mailto:contact@gmail.com">support@affclickzen.com</a>
                                     </p>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@ const ContactUs = () => {
                                 <h2 className="uppercase font-semibold font-heebo">Mailing Address</h2>
                                 <div className="flex items-start md:items-center">
                                     <FaLocationDot className="text-Blue text-xl" />
-                                    <p className="text-md font-heebo">1900 Olevia St, Jacksonville, FL 32207</p>
+                                    <p className="text-md font-heebo">66 Filbert Dr, Camden Wyoming</p>
                                 </div>
 
                                 {/* Social Icons */}

@@ -15,10 +15,11 @@ import dollarTop from "../../assets/banner/dollarTop.png";
 import { FaUser } from "react-icons/fa";
 // import { Link } from "react-router-dom";
 import CountUp from "react-countup";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     const headline = "Target The World";
-    const Subheadline = "What can smart advertising do for you";
+    const Subheadline = "What can smart advertising do for you ?";
     // const headline = "Performance marketing that delivers the results you define.";
 
     // Animation variants for right side icons
@@ -171,9 +172,12 @@ const Hero = () => {
                                 </div>
 
                                 {/* Right Section */}
-                                <button className="bg-[#0C302B] w-[200px]  hover:bg-[#25219a] transform rounded-r-full duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
-                                    Apply
-                                </button>
+                                <Link to='https://affclickzen.everflowclient.io/affiliate/signup'>
+                                    <button className="bg-[#0C302B] w-[200px]  hover:bg-[#25219a] transform rounded-r-full duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
+                                        Apply
+                                    </button>
+                                </Link>
+
                             </div>
                             <div className="relative flex items-center overflow-hidden mt-10">
                                 {/* Left Section */}
@@ -185,9 +189,12 @@ const Hero = () => {
                                 </div>
 
                                 {/* Right Section */}
-                                <button className="bg-[#0C302B] w-[200px]  hover:bg-[#25219a] transform rounded-r-full duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
-                                    Apply
-                                </button>
+                                <Link to='https://affclickzen.everflowclient.io/advertiser/signup'>
+                                    <button className="bg-[#0C302B] w-[200px]  hover:bg-[#25219a] transform rounded-r-full duration-300 text-white px-6 py-[22px] font-bold h-full font-heebo uppercase">
+                                        Apply
+                                    </button>
+                                </Link>
+
                             </div>
                             {/* <div className="relative flex items-center overflow-hidden mt-10 ">
                              
