@@ -292,7 +292,7 @@ const Nav = () => {
                                                 Contact
                                             </Link>
                                             <Link
-                                                 to="https://affclickzen.everflowclient.io/auth/login"
+                                                 to="https://affclickzen.everflowclient.io/"
                                                 className={`px-5 py-1 text-white rounded-full bg-[#113706] hover:bg-[#5742BF] transform duration-300 ${getActiveClass("/login")}`}
                                             >
                                                 Login
@@ -406,7 +406,7 @@ const Nav = () => {
 
                                         <motion.div variants={linkVariants}>
                                             <Link
-                                                to="https://affclickzen.everflowclient.io/auth/login"
+                                                to="https://affclickzen.everflowclient.io/"
                                                 className="block bg-[#113706] hover:bg-[#5742BF] text-white px-6 py-3 rounded  transform duration-300"
                                                 onClick={toggleMenu}
                                             >
